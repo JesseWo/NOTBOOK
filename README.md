@@ -1,4 +1,4 @@
-# Initial page
+# Linux云服务器CheckList
 
 目前云服务器系统主要分为两种: Ubuntu 和 CentOS, 两者都是基于Linux内核的发行版. 对于小白用户, 以下是最基本的区别...
 
@@ -27,9 +27,9 @@ Ubuntu 14.04.5 LTS
 
 #### 1.1 ssh配置免登陆
 
-```text
-  //在你本机, 将ssh公钥上传到vps, 以下命令回车后输入登录密码
-  ssh-copy-id root@your_vps_ip
+```bash
+#在你本机, 将ssh公钥上传到vps, 以下命令回车后输入登录密码
+ssh-copy-id root@your_vps_ip
 ```
 
 具体参见 [Linux免密码SSH登录（公钥登录）](https://www.jianshu.com/p/7f5f727a2b60)
@@ -42,14 +42,14 @@ Ubuntu 14.04.5 LTS
 
 若你的服务器没遇到此问题, 那么可以忽略.
 
-```text
-//修改ssh的配置文件
+```bash
+#修改ssh的配置文件
 vim /etc/ssh/sshd_config
 
-//添加如下两行配置
-//服务端每隔60s给client发送心跳包
+#添加如下两行配置
+#服务端每隔60s给client发送心跳包
 ClientAliveInterval 60  
-//服务器发出请求后客户端没有响应的次数达到3次, 就自动断开
+#服务器发出请求后客户端没有响应的次数达到3次, 就自动断开
 ClientAliveCountMax 3
 ```
 
@@ -63,20 +63,20 @@ ClientAliveCountMax 3
 * db-util
 * openssl
 
-  ```text
+  ```bash
   apt install -y curl wget vim git screen db-util openssl
   ```
 
 * zsh 
 
-  ```text
-  //安装 zsh
+  ```bash
+  #安装 zsh
   apt install zsh
-  //切换为zsh
+  #切换为zsh
   chsh -s `which zsh`
-  //安装 oh-my-zsh (美化)
+  #安装 oh-my-zsh (美化)
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-    zsh/master/tools/install.sh)"
-   //重连ssh后 查看当前shell
+  #重连ssh后 查看当前shell
   echo $SHELL
   ```
 
@@ -94,7 +94,7 @@ ClientAliveCountMax 3
   perl: warning: Falling back to a fallback locale ("en_US.UTF-8").
   ```
 
-  ```text
+  ```bash
   apt install language-pack-zh-hans
   ```
 
@@ -102,28 +102,30 @@ ClientAliveCountMax 3
 
   [ubuntu搭建ftp服务](https://www.jianshu.com/p/dec051c3f878)
 
+* [SSMTP](https://wiki.archlinux.org/index.php/SSMTP)
+
 ### 3. 开发环境配置
 
 * **python**
 
-  ```text
+  ```bash
   apt install python python3
   ```
 
 * **node**
 
-  ```text
-  //node版本管理器 nvm
+  ```bash
+  #node版本管理器 nvm
   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-  //安装最新node LTS版本
+  #安装最新node LTS版本
   nvm install --lts
-  //更新npm版本
+  #更新npm版本
   npm i -g npm
   ```
 
   淘宝[cnpm](https://npm.taobao.org/)
 
-  ```text
+  ```bash
   npm install -g cnpm --registry=https://registry.npm.taobao.org
   ```
 
@@ -149,42 +151,64 @@ ClientAliveCountMax 3
 
 * **Nginx**
 * **Mysql**
+  ```bash
+  #安装server端
+  apt install mysql-server
+  #配置MySQL
+  mysql_secure_installation
+  #启动
+  service mysql start
+  #安装client端
+  apt install mysql-client
+  ```
 
-  \`\`\` //安装server端 apt install mysql-server //配置MySQL mysql\_secure\_installation //启动 service mysql start //安装client端 apt install mysql-client
-
-```text
-- ####mangoDB
+- #### mangoDB
+```
+//todo
 ```
 
-//todo
-
-```text
-- ####Docker [官网cn](https://www.docker-cn.com/)
+- #### Docker [官网cn](https://www.docker-cn.com/)
 1. [安装CE社区版](https://docs.docker.com/install/linux/docker-ce/ubuntu/), 首先确认系统是否支持, 针对ubuntu系统必须是以下的64位版本
 ```
-
 Artful 17.10 \(Docker CE 17.11 Edge and higher only\) Xenial 16.04 \(LTS\) Trusty 14.04 \(LTS\)
+```
 
-```text
 2. 安装
+```bash
+#Update the apt package index:
+sudo apt-get update
+#Install packages to allow apt to use a repository over HTTPS:
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+#Add Docker’s official GPG key
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+#set up the stable repository. (x86_64/amd64)
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+#Update the apt package index.
+sudo apt-get update
+#install the latest version of Docker CE
+sudo apt-get install docker-ce
+#查看版本
+docker -v
+#Docker version 18.03.1-ce, build 9ee9f40
 ```
 
-//Update the apt package index: sudo apt-get update //Install packages to allow apt to use a repository over HTTPS: sudo apt-get install  apt-transport-https  ca-certificates  curl  software-properties-common //Add Docker’s official GPG key curl -fsSL [https://download.docker.com/linux/ubuntu/gpg](https://download.docker.com/linux/ubuntu/gpg) \| sudo apt-key add - //set up the stable repository. \(x86\_64/amd64\) sudo add-apt-repository  "deb \[arch=amd64\] [https://download.docker.com/linux/ubuntu](https://download.docker.com/linux/ubuntu)  $\(lsb\_release -cs\)  stable" //Update the apt package index. sudo apt-get update //nstall the latest version of Docker CE sudo apt-get install docker-ce //查看版本 docker -v //Docker version 18.03.1-ce, build 9ee9f40
-
-```text
 3. 配置镜像
-打开/etc/default/docker文件（需要sudo权限），在文件的底部加上一行。
+打开/etc/default/docker文件（需要sudo权限)，在文件的底部加上一行。
+```
+DOCKER\_OPTS="--registry-mirror=[https://registry.docker-cn.com](https://registry.docker-cn.com)"
 ```
 
-DOCKER\_OPTS="--registry-mirror=[https://registry.docker-cn.com](https://registry.docker-cn.com)"
-
-```text
 然后重启
 ```
-
 service docker restart
-
-```text
+```
 对于mac, 打开preference, 修改如下, 然后Apply&Restart
 ![image.png](https://upload-images.jianshu.io/upload_images/1200965-9da0e9f2c038d0c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/340)
 
@@ -192,31 +216,28 @@ service docker restart
 
 4. 安装 [docker-compose](https://docs.docker.com/compose/install/#install-compose)
 ```
-
 //下载Docker Compose的最新版本 sudo curl -L [https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$\(uname](https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$%28uname) -s\)-$\(uname -m\) -o /usr/local/bin/docker-compose //添加可执行权限 sudo chmod +x /usr/local/bin/docker-compose //查看 docker-compose --version
 
-```text
+```
+
 5. 命令行自动补全 [Command-line completion](https://docs.docker.com/compose/completion/)
 
-zsh
+#### 5. zsh
 5.1. 在用户home目录
+```bash
+mkdir -p ~/.zsh/completion curl -L [https://raw.githubusercontent.com/docker/compose/1.21.2/contrib/completion/zsh/\_docker-compose](https://raw.githubusercontent.com/docker/compose/1.21.2/contrib/completion/zsh/_docker-compose) &gt; ~/.zsh/completion/\_docker-compose
 ```
 
-mkdir -p ~/.zsh/completion curl -L [https://raw.githubusercontent.com/docker/compose/1.21.2/contrib/completion/zsh/\_docker-compose](https://raw.githubusercontent.com/docker/compose/1.21.2/contrib/completion/zsh/_docker-compose) &gt; ~/.zsh/completion/\_docker-compose
-
-```text
 5.2. 然后在 ```~/.zshrc``` 中添加
 ```
-
 fpath=\(~/.zsh/completion $fpath\) autoload -Uz compinit && compinit -i
-
-```text
-5.3. 最后重启shell
 ```
 
+5.3. 最后重启shell
+```bash
 exec $SHELL -l
+```
 
-```text
 ## 4. 梯子
 ---
 ### 4.1 SS (境外服务器上安装)
@@ -265,32 +286,35 @@ HaProxy是其中的方法之一，使用方便，只支持TCP转. \(当然对ipt
 
 * 配置
 
-  \`\`\`
+  ```vim /etc/haproxy/haproxy.cfg``` 修改内容如下:
+```
+global
+ 
+defaults
+    log global
+    mode    tcp
+    option  dontlognull
+        timeout connect 5000
+        timeout client  50000
+        timeout server  50000
+ 
+frontend ss-in
+    bind *:6666
+    default_backend ss-out
+ 
+backend ss-out
+    server server1 233.233.233.233 maxconn 20480
+```
 
-  vim /etc/haproxy/haproxy.cfg
-
-  修改内容如下:
-
-  global
-
-defaults log global mode tcp option dontlognull timeout connect 5000 timeout client 50000 timeout server 50000
-
-frontend ss-in bind \*:6666 default\_backend ss-out
-
-backend ss-out server server1 233.233.233.233 maxconn 20480
-
-```text
 其中6666换成你境外vps上搭建的ss的port, 233.233.233.233 替换成你ss的ip, 以上配置完成
 - 启动
 ```
-
 service haproxy start
-
-```text
-- 设置为开机自启
 ```
 
+- 设置为开机自启
+```
 systemctl enable haproxy
-
-\`\`\` [以上参考](https://doub.io/ss-jc29/)
+```
+[以上参考](https://doub.io/ss-jc29/)
 
