@@ -15,7 +15,7 @@
 ## 特殊机型列举
 ### vivo
 系统全面接管动态权限管理.包括6.0以上机型在内, 都没有采用原生的动态权限管理机制.
-通过 ```ContextCompat.checkSelfPermission(context, permissionLists.get(i)) == PackageManager.PERMISSION_GRANTED)``` 方式校验是否获得权限,全部返回true. 
+通过 ```ContextCompat.checkSelfPermission(context, permissionLists.get(i)) == PackageManager.PERMISSION_GRANTED)``` 方式校验是否获得权限,全部返回true.
 
 只有在调用相关业务代码时才由系统弹出权限请求弹窗; 但是不会抛出异常;
 - 对于拍照权限, 在调用摄像头时, 如果用户没有允许, 系统都会弹窗询问; (权限处于禁止或询问状态)
