@@ -16,3 +16,11 @@
 
 ### 脚手架
 [create-react-app)](https://github.com/facebook/create-react-app)
+
+### node
+- [package.json](http://javascript.ruanyifeng.com/nodejs/packagejson.html)
+- [npm scripts 使用指南](http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html)
+
+环境变量
+- [process.env](http://nodejs.cn/api/process.html#process_process_env)
+- [dotenv](https://github.com/motdotla/dotenv)
