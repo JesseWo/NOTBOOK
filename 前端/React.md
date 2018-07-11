@@ -1,6 +1,7 @@
 ### 官方文档(cn)
 - [官方文档(cn)](https://www.reactjscn.com/docs/hello-world.html)
 - [阮一峰: React 技术栈系列教程](http://www.ruanyifeng.com/blog/2016/09/react-technology-stack.html)
+- [react-router](https://reacttraining.com/react-router/web/guides/philosophy)
 
 ### CSS解决方案
 - [CSS-Modules](https://github.com/css-modules/css-modules)
@@ -15,10 +16,11 @@
 - [入门 Webpack，看这篇就够了](https://segmentfault.com/a/1190000006178770)
 
 ### 脚手架
-[create-react-app)](https://github.com/facebook/create-react-app)
+[create-react-app](https://github.com/facebook/create-react-app)
 
 ### node
-- [package.json](http://javascript.ruanyifeng.com/nodejs/packagejson.html)
+- [npm官方文档](https://docs.npmjs.com/)
+- [阮一峰: package.json](http://javascript.ruanyifeng.com/nodejs/packagejson.html)
 - [npm scripts 使用指南](http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html)
 
 环境变量
