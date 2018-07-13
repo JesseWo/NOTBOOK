@@ -11,6 +11,12 @@
 - [阮一峰: CSS Modules 用法教程](http://www.ruanyifeng.com/blog/2016/06/css_modules.html)
 - [sass](https://www.sass.hk/guide/)
 
+### Redux
+- [官方文档](https://redux.js.org/)
+- [Redux 入门教程（一）：基本用法](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html)
+- [Redux 入门教程（二）：中间件与异步操作](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_two_async_operations.html)
+- [Redux 入门教程（三）：React-Redux 的用法](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.html)
+
 ### 静态检查
 - [TypeScript](https://www.tslang.cn/docs/home.html)
 
@@ -30,3 +36,13 @@
 环境变量
 - [process.env](http://nodejs.cn/api/process.html#process_process_env)
 - [dotenv](https://github.com/motdotla/dotenv)
+- [webpack 使用环境变量](https://www.webpackjs.com/guides/environment-variables/)
+
+### 轮子
+- [Ant Design of React](https://ant.design/docs/react/introduce-cn)
+- [二维码生成: qrcode.react](https://github.com/zpao/qrcode.react)
+- [优秀轮子集锦](https://ant.design/docs/react/recommendation-cn)
+
+### 优秀项目
+- [react 后台管理系统解决方案](https://github.com/yezihaohao/react-admin)
+- [使用 React 全家桶搭建一个后台管理系统](https://github.com/MuYunyun/reactSPA)
