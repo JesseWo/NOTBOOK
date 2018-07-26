@@ -25,7 +25,7 @@
 系统弹窗无"不再提醒"复选框, 所以点击拒绝即为永久禁止
 
 ## 权限管理流程
-![权限管理流程](images/权限管理流程.png)
+![权限管理流程](/images/权限管理流程.png)
 以微博为例, 解释以上流程图中涉及到的3类弹窗:
 
 ![image.png](https://upload-images.jianshu.io/upload_images/1200965-e69bdb2e425ab79b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -33,3 +33,4 @@
 ## 附录:
 - [android.developer官网: 权限最佳做法](https://developer.android.google.cn/training/permissions/best-practices#testing)
 - [android.developer官网: 系统权限](https://developer.android.com/guide/topics/security/permissions?hl=zh-cn)
+- [国内 Android 设备 / ROM 兼容性问题反馈与跟踪](https://github.com/android-in-china/Compatibility)
