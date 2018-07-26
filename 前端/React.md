@@ -22,8 +22,17 @@
 
 ### 打包构建
 - [webpack文档](https://www.webpackjs.com/concepts/)
-- [webpack plugins](https://www.webpackjs.com/plugins/)
 - [入门 Webpack，看这篇就够了](https://segmentfault.com/a/1190000006178770)
+- [webpack plugins](https://www.webpackjs.com/plugins/)
+
+
+### webpack 4.x 填坑
+
+webpack 升级到4.3.x后, `ExtractTextWebpackPlugin` 会报
+> Error: Path variable [contenthash] not implemented in this context: style/[name].[contenthash].css
+
+具体参考 [issue763](https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/763)
+, 且未来 `extract-text-webpack-plugin` 将废弃, 作者推荐用 [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin) 取代 [ExtractTextWebpackPlugin](https://www.webpackjs.com/plugins/extract-text-webpack-plugin/).
 
 ### 脚手架
 - [create-react-app](https://github.com/facebook/create-react-app)
