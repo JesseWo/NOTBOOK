@@ -36,6 +36,8 @@ webpack 升级到4.3.x后, `ExtractTextWebpackPlugin` 会报
 
 ## 脚手架
 - [create-react-app](https://github.com/facebook/create-react-app)
+- [react-app-rewired](https://github.com/timarney/react-app-rewired)
+    > 一种修改 `create-react-app webpack` 配置的社区解决方案, 不用 `eject` 也不用直接修改 `react-script`;
 
 ## node
 - [npm官方文档](https://docs.npmjs.com/)
