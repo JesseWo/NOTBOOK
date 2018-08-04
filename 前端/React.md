@@ -59,7 +59,11 @@ webpack 升级到4.3.x后, `ExtractTextWebpackPlugin` 会报
 - [二维码生成: qrcode.react](https://github.com/zpao/qrcode.react)
 - [apk和ipa包解析: isomorphic-pkg-reader](https://www.npmjs.com/package/isomorphic-pkg-reader)
 - [优秀轮子集锦](https://ant.design/docs/react/recommendation-cn)
+- [短UUID生成: hashids](https://github.com/ivanakimov/hashids.js)
+- [UUID生成(RFC4122): node-uuid](https://github.com/kelektiv/node-uuid)
+- [nodemail: 发邮件](https://nodemailer.com/about/)
 
 ## 优秀项目
+- [Nodeclub: 使用 Node.js 和 MongoDB 开发的社区系统](https://github.com/cnodejs/nodeclub)
 - [react 后台管理系统解决方案](https://github.com/yezihaohao/react-admin)
 - [使用 React 全家桶搭建一个后台管理系统](https://github.com/MuYunyun/reactSPA)

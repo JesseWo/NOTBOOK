@@ -1,0 +1,2 @@
+- [Android热修复技术选型——三大流派解析](https://mp.weixin.qq.com/s/uY5N_PSny7_CHOgUA99UjA?spm=a2c4g.11186623.2.5.o1ZJDb)
+- [Tencent: tinker](https://github.com/Tencent/tinker)
