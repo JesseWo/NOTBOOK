@@ -49,6 +49,15 @@ webpack 升级到4.3.x后, `ExtractTextWebpackPlugin` 会报
 - [dotenv](https://github.com/motdotla/dotenv)
 - [webpack 使用环境变量](https://www.webpackjs.com/guides/environment-variables/)
 
+## 内存缓存
+- [Redis](http://www.redis.net.cn/)
+- [node-Redis](https://www.npmjs.com/package/redis)
+
+## 数据库
+- [MongoDB](https://www.mongodb.com/)
+- [MongoDB 中文](http://www.mongodb.org.cn/tutorial/)
+- [mongoose](http://mongoosejs.com/docs/index.html)
+
 ## 轮子
 - [Ant Design of React](https://ant.design/docs/react/introduce-cn)
     ### antd中的坑
@@ -59,6 +68,8 @@ webpack 升级到4.3.x后, `ExtractTextWebpackPlugin` 会报
 - [二维码生成: qrcode.react](https://github.com/zpao/qrcode.react)
 - [apk和ipa包解析: isomorphic-pkg-reader](https://www.npmjs.com/package/isomorphic-pkg-reader)
 - [优秀轮子集锦](https://ant.design/docs/react/recommendation-cn)
+
+### 用户系统设计
 - [短UUID生成: hashids](https://github.com/ivanakimov/hashids.js)
 - [UUID生成(RFC4122): node-uuid](https://github.com/kelektiv/node-uuid)
 - [nodemail: 发邮件](https://nodemailer.com/about/)
@@ -66,4 +77,3 @@ webpack 升级到4.3.x后, `ExtractTextWebpackPlugin` 会报
 ## 优秀项目
 - [Nodeclub: 使用 Node.js 和 MongoDB 开发的社区系统](https://github.com/cnodejs/nodeclub)
 - [react 后台管理系统解决方案](https://github.com/yezihaohao/react-admin)
-- [使用 React 全家桶搭建一个后台管理系统](https://github.com/MuYunyun/reactSPA)
