@@ -54,11 +54,12 @@ webpack 升级到4.3.x后, `ExtractTextWebpackPlugin` 会报
 - [node-Redis](https://www.npmjs.com/package/redis)
 
 ## 数据库
-- [MongoDB](https://www.mongodb.com/)
+- [MongoDB](https://docs.mongodb.com/guides/)
 - [MongoDB 中文](http://www.mongodb.org.cn/tutorial/)
 - [mongoose](http://mongoosejs.com/docs/index.html)
 
 ## 轮子
+- [Promise解决方案: bluebird](http://bluebirdjs.com/docs/getting-started.html)
 - [Ant Design of React](https://ant.design/docs/react/introduce-cn)
     ### antd中的坑
     - [babel-plugin-import: 按需加载antd中的组件和样式](https://github.com/ant-design/babel-plugin-import#usage)
@@ -72,7 +73,9 @@ webpack 升级到4.3.x后, `ExtractTextWebpackPlugin` 会报
 ### 用户系统设计
 - [短UUID生成: hashids](https://github.com/ivanakimov/hashids.js)
 - [UUID生成(RFC4122): node-uuid](https://github.com/kelektiv/node-uuid)
+- [koa-session2](https://github.com/Secbone/koa-session2#readme)
 - [nodemail: 发邮件](https://nodemailer.com/about/)
+- [登录验证码生成]()
 
 ## 优秀项目
 - [Nodeclub: 使用 Node.js 和 MongoDB 开发的社区系统](https://github.com/cnodejs/nodeclub)
