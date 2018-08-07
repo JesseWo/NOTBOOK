@@ -76,6 +76,9 @@ webpack 升级到4.3.x后, `ExtractTextWebpackPlugin` 会报
 - [koa-session2](https://github.com/Secbone/koa-session2#readme)
 - [nodemail: 发邮件](https://nodemailer.com/about/)
 - [登录验证码生成]()
+- [加盐密码哈希：如何正确使用](http://blog.jobbole.com/61872/)
+- [密码存储加密: 慢哈希算法介绍以及各语言的实现](https://paragonie.com/blog/2016/02/how-safely-store-password-in-2016#nodejs)
+- [node: bcrypt](https://www.npmjs.com/package/bcrypt)
 
 ## 优秀项目
 - [Nodeclub: 使用 Node.js 和 MongoDB 开发的社区系统](https://github.com/cnodejs/nodeclub)
