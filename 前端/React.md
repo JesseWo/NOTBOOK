@@ -6,10 +6,31 @@
 - [官方文档(cn)](https://www.reactjscn.com/docs/hello-world.html)
 - [react-router](https://reacttraining.com/react-router/web/guides/philosophy)
 
+- [browserslist](https://github.com/browserslist/browserslist#queries)
+    
+    The config to share target browsers and Node.js versions between different front-end tools. It is used in:
+    - Autoprefixer
+    - Babel (external config in package.json or browserslist will be supported in 7.0)
+    - postcss-preset-env
+    - eslint-plugin-compat
+    - stylelint-no-unsupported-browser-features
+    - postcss-normalize
+
+## Babel
+> ES6, ES2017, TypeScript, CoffeScript等 => js
+- [在webpack中集成: babel-loader](https://www.webpackjs.com/loaders/babel-loader/)
+
 ## CSS解决方案
 - [CSS-Modules](https://github.com/css-modules/css-modules)
-- [阮一峰: CSS Modules 用法教程](http://www.ruanyifeng.com/blog/2016/06/css_modules.html)
+    - [阮一峰: CSS Modules 用法教程](http://www.ruanyifeng.com/blog/2016/06/css_modules.html)
+
 - [sass](https://www.sass.hk/guide/)
+    - [在webpack中集成: sass-loader](https://www.webpackjs.com/loaders/sass-loader/)
+    - [sass-loader的依赖: node-sass](https://github.com/sass/node-sass)
+
+- [postcss]()
+    - [插件: Autoprefixer,浏览器兼容,自动添加前缀](https://www.npmjs.com/package/autoprefixer)
+    - [在webpack中集成: postcss-loader](https://www.webpackjs.com/loaders/postcss-loader/#syntaxes)
 
 ## Redux
 - [官方文档](https://redux.js.org/)
@@ -41,7 +62,7 @@ webpack 升级到4.3.x后, `ExtractTextWebpackPlugin` 会报
 
 ## node
 - [npm官方文档](https://docs.npmjs.com/)
-- [阮一峰: package.json](http://javascript.ruanyifeng.com/nodejs/packagejson.html)
+- [npm: package.json](https://docs.npmjs.com/files/package.json)
 - [npm scripts 使用指南](http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html)
 
 环境变量
