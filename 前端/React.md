@@ -16,9 +16,17 @@
     - stylelint-no-unsupported-browser-features
     - postcss-normalize
 
+## Redux
+- [官方文档](https://redux.js.org/)
+- [redux中文文档](http://www.redux.org.cn/)
+- [Redux 入门教程（一）：基本用法](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html)
+- [Redux 入门教程（二）：中间件与异步操作](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_two_async_operations.html)
+- [Redux 入门教程（三）：React-Redux 的用法](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.html)
+
 ## Babel
 > ES6, ES2017, TypeScript, CoffeScript等 => js
 - [在webpack中集成: babel-loader](https://www.webpackjs.com/loaders/babel-loader/)
+- [代码压缩/混淆/删除useless代码: UglifyJS2](https://github.com/mishoo/UglifyJS2/tree/harmony#output-options)
 
 ## CSS解决方案
 - [CSS-Modules](https://github.com/css-modules/css-modules)
@@ -31,12 +39,6 @@
 - [postcss]()
     - [插件: Autoprefixer,浏览器兼容,自动添加前缀](https://www.npmjs.com/package/autoprefixer)
     - [在webpack中集成: postcss-loader](https://www.webpackjs.com/loaders/postcss-loader/#syntaxes)
-
-## Redux
-- [官方文档](https://redux.js.org/)
-- [Redux 入门教程（一）：基本用法](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html)
-- [Redux 入门教程（二）：中间件与异步操作](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_two_async_operations.html)
-- [Redux 入门教程（三）：React-Redux 的用法](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.html)
 
 ## 静态检查
 - [TypeScript](https://www.tslang.cn/docs/home.html)
