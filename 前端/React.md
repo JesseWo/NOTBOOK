@@ -5,10 +5,12 @@
 ## 官方文档(cn)
 - [官方文档(cn)](https://www.reactjscn.com/docs/hello-world.html)
 - [react-router](https://reacttraining.com/react-router/web/guides/philosophy)
+- [react-hot-loader](https://github.com/gaearon/react-hot-loader)
+- [history](https://github.com/ReactTraining/history)
 
 - [browserslist](https://github.com/browserslist/browserslist#queries)
     
-    The config to share target browsers and Node.js versions between different front-end tools. It is used in:
+    用于配置浏览器和node.js版本, 而且可以通用于各种前端工具:
     - Autoprefixer
     - Babel (external config in package.json or browserslist will be supported in 7.0)
     - postcss-preset-env
@@ -19,9 +21,12 @@
 ## Redux
 - [官方文档](https://redux.js.org/)
 - [redux中文文档](http://www.redux.org.cn/)
-- [Redux 入门教程（一）：基本用法](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html)
-- [Redux 入门教程（二）：中间件与异步操作](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_two_async_operations.html)
-- [Redux 入门教程（三）：React-Redux 的用法](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.html)
+- [redux-actions](https://redux-actions.js.org/introduction/tutorial)
+    - [Redux 入门教程（一）：基本用法](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html)
+    - [Redux 入门教程（二）：中间件与异步操作](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_two_async_operations.html)
+    - [Redux 入门教程（三）：React-Redux 的用法](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.html)
+- [connected-react-router](https://github.com/supasate/connected-react-router)
+    > A Redux binding for React Router v4
 
 ## Babel
 > ES6, ES2017, TypeScript, CoffeScript等 => js
