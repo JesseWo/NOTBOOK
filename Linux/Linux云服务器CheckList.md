@@ -162,9 +162,28 @@ ClientAliveCountMax 3
   apt install mysql-client
   ```
 
-- #### mangoDB
+- #### [mangoDB](https://www.mongodb.com) 
+    * [中文一](http://www.mongodb.org.cn/tutorial/56.html)
+    * [中文二](http://www.mongoing.com/docs/tutorial/install-mongodb-on-ubuntu.html)
+
+
+- [Redis](https://redis.io/)    ([中文](http://www.redis.cn))
+1. 安装
+```bash
+wget http://download.redis.io/releases/redis-5.0.0.tar.gz
+tar xzf redis-5.0.0.tar.gz
+cd redis-5.0.0
+make
 ```
-//todo
+2. 使用
+>使用 `Systemd` 来管理, service单元脚本在 /etc/systemd/system/下
+```bash
+service redis-server start
+service redis-server status
+service redis-server stop
+service redis-server restart
+# 设置开机自启
+systemctl enable redis-server
 ```
 
 - #### Docker [官网cn](https://www.docker-cn.com/)
