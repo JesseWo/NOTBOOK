@@ -285,7 +285,16 @@ exec $SHELL -l
 
 **4.2.2 谷歌BBR加速\(✨\)**
 
-Google开源TCP BBR拥塞控制算法（简称BBR），可以应用到常规的KVM和XEN架构的VPS、服务器中，用来提升服务器的速度。 [Ubuntu升级内核,开启BBR加速](https://leiquan.website/2017/04/24/Ubuntu开启BBR加速Shadowsocks/) **需升级内核，五星推荐，实测效果非常明显（ping值虽没有明显改善，但下行速度提升相当明显）。** 打开视频，自动切换为1080P，无压力 ![Paste\_Image.png](http://upload-images.jianshu.io/upload_images/1200965-814855105f202ab5.png?imageMogr2/auto-orient/strip|imageView2/2/w/720)
+Google开源TCP [BBR拥塞控制算法](https://github.com/google/bbr)（简称BBR），可以应用到常规的KVM和XEN架构的VPS、服务器中，用来提升服务器的速度。 [Ubuntu升级内核,开启BBR加速]() **需升级内核，五星推荐，实测效果非常明显（ping值虽没有明显改善，但下行速度提升相当明显）。** 
+
+确定bbr已经成功开启
+```bash
+➜  ~ sysctl net.ipv4.tcp_available_congestion_control
+net.ipv4.tcp_available_congestion_control = bbr cubic reno
+➜  ~ lsmod | grep bbr
+tcp_bbr                 6015  17
+```
+打开视频，自动切换为1080P，无压力 ![Paste\_Image.png](http://upload-images.jianshu.io/upload_images/1200965-814855105f202ab5.png?imageMogr2/auto-orient/strip|imageView2/2/w/720)
 
 因新升级后的内核版本过高，锐捷加速不支持此内核。所以目前两种加速方式只能二选一 1.2
 
@@ -337,3 +346,14 @@ systemctl enable haproxy
 ```
 [以上参考](https://doub.io/ss-jc29/)
 
+
+**4.2.4 KCP加速**
+- [KCP](https://github.com/skywind3000/kcp)
+- [kcptun](https://github.com/xtaci/kcptun)
+
+一键安装脚本
+```bash
+wget https://github.com/kuoruan/shell-scripts/raw/master/kcptun/kcptun.sh
+chmod +x kcptun.sh
+./kcptun.sh
+```
