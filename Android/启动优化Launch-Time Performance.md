@@ -2,7 +2,7 @@
 App启动过程:
 
     
-启动时间统计:
+启动时间统计:
 - [系统logcat(API19以上):verbose Displayed](https://developer.android.com/topic/performance/vitals/launch-time#dx)
     ```
     I/ActivityManager: Displayed com.tencent.mm/.ui.LauncherUI: +761ms
@@ -16,7 +16,7 @@ App启动过程:
     -c android.intent.category.LAUNCHER 
     -a android.intent.action.MAIN
     ```
-    例子
+    例子
     ```
     # 执行
     adb shell am start -S -W com.sina.weibo/.SplashActivity -c android.intent.category.LAUNCHER -a android.intent.action.MAIN

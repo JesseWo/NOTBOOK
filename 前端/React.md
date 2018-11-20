@@ -10,7 +10,7 @@
 
 - [browserslist](https://github.com/browserslist/browserslist#queries)
     
-    用于配置浏览器和node.js版本, 而且可以通用于各种前端工具:
+    用于配置浏览器和node.js版本, 而且可以通用于各种前端工具:
     - Autoprefixer
     - Babel (external config in package.json or browserslist will be supported in 7.0)
     - postcss-preset-env
@@ -38,7 +38,7 @@
     - [阮一峰: CSS Modules 用法教程](http://www.ruanyifeng.com/blog/2016/06/css_modules.html)
 
 - [sass](https://www.sass.hk/guide/)
-    - [在webpack中集成: sass-loader](https://www.webpackjs.com/loaders/sass-loader/)
+    - [在webpack中集成: sass-loader](https://www.webpackjs.com/loaders/sass-loader/)
     - [sass-loader的依赖: node-sass](https://github.com/sass/node-sass)
 
 - [postcss]()
@@ -52,11 +52,11 @@
 - [webpack文档](https://www.webpackjs.com/concepts/)
 - [入门 Webpack，看这篇就够了](https://segmentfault.com/a/1190000006178770)
 - [webpack plugins](https://www.webpackjs.com/plugins/)
-- [webpack-merge](https://github.com/survivejs/webpack-merge): 用于不同环境的webpack.config.js抽取.
+- [webpack-merge](https://github.com/survivejs/webpack-merge): 用于不同环境的webpack.config.js抽取.
 
 ### webpack 4.x 填坑
 
-webpack 升级到4.3.x后, `ExtractTextWebpackPlugin` 会报
+webpack 升级到4.3.x后, `ExtractTextWebpackPlugin` 会报
 > Error: Path variable [contenthash] not implemented in this context: style/[name].[contenthash].css
 
 具体参考 [issue763](https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/763)
@@ -92,7 +92,7 @@ webpack 升级到4.3.x后, `ExtractTextWebpackPlugin` 会报
     ### antd中的坑
     - [babel-plugin-import: 按需加载antd中的组件和样式](https://github.com/ant-design/babel-plugin-import#usage)
     - [解决引入antd样式无效问题](https://www.jianshu.com/p/a25ba1adeda2)
-    - [解决css-modules与antd冲突问题(antd样式不生效)](https://www.jianshu.com/p/51ff1c8be301)
+    - [解决css-modules与antd冲突问题(antd样式不生效)](https://www.jianshu.com/p/51ff1c8be301)
 
 - [二维码生成: qrcode.react](https://github.com/zpao/qrcode.react)
 - [apk和ipa包解析: isomorphic-pkg-reader](https://www.npmjs.com/package/isomorphic-pkg-reader)
@@ -102,11 +102,11 @@ webpack 升级到4.3.x后, `ExtractTextWebpackPlugin` 会报
 - [短UUID生成: hashids](https://github.com/ivanakimov/hashids.js)
 - [UUID生成(RFC4122): node-uuid](https://github.com/kelektiv/node-uuid)
 - [koa-session2](https://github.com/Secbone/koa-session2#readme)
-- [nodemail: 发邮件](https://nodemailer.com/about/)
+- [nodemail: 发邮件](https://nodemailer.com/about/)
 - [登录验证码生成]()
 - [加盐密码哈希：如何正确使用](http://blog.jobbole.com/61872/)
 - [密码存储加密: 慢哈希算法介绍以及各语言的实现](https://paragonie.com/blog/2016/02/how-safely-store-password-in-2016#nodejs)
-- [node: bcrypt](https://www.npmjs.com/package/bcrypt)
+- [node: bcrypt](https://www.npmjs.com/package/bcrypt)
 
 ## 优秀项目
 - [Nodeclub: 使用 Node.js 和 MongoDB 开发的社区系统](https://github.com/cnodejs/nodeclub)

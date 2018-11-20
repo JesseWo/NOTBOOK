@@ -348,12 +348,80 @@ systemctl enable haproxy
 
 
 **4.2.4 KCP加速**
-- [KCP](https://github.com/skywind3000/kcp)
-- [kcptun](https://github.com/xtaci/kcptun)
+- 了解
+    - [KCP github](https://github.com/skywind3000/kcp)
+    - [kcptun github](https://github.com/xtaci/kcptun)
 
-一键安装脚本
-```bash
-wget https://github.com/kuoruan/shell-scripts/raw/master/kcptun/kcptun.sh
-chmod +x kcptun.sh
-./kcptun.sh
-```
+- server
+
+    一键安装脚本
+    ```bash
+    wget https://github.com/kuoruan/shell-scripts/raw/master/kcptun/kcptun.sh
+    chmod +x kcptun.sh
+    # 运行脚本, 根据提示进行配置.
+    ./kcptun.sh
+    ```
+    以上运行成功后会在终端输出client端的配置信息, 注意留存.
+
+- client
+    - Mac
+        - cli方式
+            ```bash
+            # https://github.com/xtaci/kcptun/releases 下载最新版kcptun
+            wget https://github.com/xtaci/kcptun/releases/download/v20181114/kcptun-darwin-amd64-20181114.tar.gz
+            # 解压
+            tar xzvf kcptun-darwin-amd64-20181114.tar.gz
+            cd kcptun-darwin-amd64-20181114 
+            # 准备配置文件 kcptun_client_config.json
+            {
+                "localaddr": ":8989",
+                "remoteaddr": "your_vps_ip:port",
+                "key": "your_custom_key",
+                "crypt": "aes-192",
+                "mode": "fast2",
+                "mtu": 1350,
+                "sndwnd": 1024,
+                "rcvwnd": 1024,
+                "datashard": 10,
+                "parityshard": 3,
+                "dscp": 0,
+                "nocomp": false,
+                "quiet": false
+            }
+            # 运行
+            ./client_darwin_amd64 -c kcptun_client_config.json
+            ```
+            kcp运行成功后, 修改本地 `sslocal` 的配置文件, `server` 改成 `127.0.0.1`, `server_port` 同 kcptun_client_config 中的 `localaddr`. 最后重启 `sslocal`.
+            ```json
+            {
+              "server":"127.0.0.1",
+              "server_port":8989,
+              "local_address":"127.0.0.1",
+              "local_port":1080,
+              "password":"your_password",
+              "timeout":600,
+              "method":"aes-256-cfb",
+              "fast_open":true
+            }
+            ```
+            进阶使用<br>
+            使用 `launchd` 配置开机自启
+            (据说 `Linux` 中的 `Systemd` 就是抄袭的 `launchd`)<br>
+            参考:<br>
+                * [Apple官方文档](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html)<br>
+                * [利用 Launchd 定制 Mac 启动任务](https://sspai.com/post/37258#01)
+            
+        - GUI方式
+            
+            下载安装[shadowsocksX-NG](https://github.com/shadowsocks/ShadowsocksX-NG/releases)<br/>
+            kcptun 以插件形式集成到了里面
+    - Windows
+        
+        //todo
+    - Android
+        
+        下载安装 shadowsocks 的 `kcptun` 插件.<br/>
+        https://github.com/shadowsocks/kcptun-android <br/>
+        输入配置, 修改端口号.
+- 测速
+fast.com
