@@ -366,13 +366,17 @@ systemctl enable haproxy
 - client
     - Mac
         - cli方式
+            
+            1. 下载安装
             ```bash
             # https://github.com/xtaci/kcptun/releases 下载最新版kcptun
             wget https://github.com/xtaci/kcptun/releases/download/v20181114/kcptun-darwin-amd64-20181114.tar.gz
             # 解压
             tar xzvf kcptun-darwin-amd64-20181114.tar.gz
             cd kcptun-darwin-amd64-20181114 
-            # 准备配置文件 kcptun_client_config.json
+            ```
+            2. 准备配置文件 kcptun_client_config.json
+            ```json
             {
                 "localaddr": ":8989",
                 "remoteaddr": "your_vps_ip:port",
@@ -388,9 +392,13 @@ systemctl enable haproxy
                 "nocomp": false,
                 "quiet": false
             }
-            # 运行
+            ```
+            3. 运行
+            ```
             ./client_darwin_amd64 -c kcptun_client_config.json
             ```
+            4. 修改sslocal的配置
+
             kcp运行成功后, 修改本地 `sslocal` 的配置文件, `server` 改成 `127.0.0.1`, `server_port` 同 kcptun_client_config 中的 `localaddr`. 最后重启 `sslocal`.
             ```json
             {
@@ -404,12 +412,53 @@ systemctl enable haproxy
               "fast_open":true
             }
             ```
-            进阶使用<br>
+            
+            5. 进阶使用
+
             使用 `launchd` 配置开机自启
             (据说 `Linux` 中的 `Systemd` 就是抄袭的 `launchd`)<br>
-            参考:<br>
-                * [Apple官方文档](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html)<br>
-                * [利用 Launchd 定制 Mac 启动任务](https://sspai.com/post/37258#01)
+            ```
+            # 进入 launchd 配置文件目录
+            cd ~/Library/LaunchAgents
+            # 新建并编辑配置文件(名字自己起, 也可以用vscode, xcode等其他编辑器编辑)
+            vim com.jessewo.kcptun_client.plist
+            ```
+            配置文件内容入下:
+            ```xml
+            <?xml version="1.0" encoding="UTF-8"?>
+            <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+            <plist version="1.0">
+            <dict>
+	            <key>KeepAlive</key>
+	            <true/>
+	            <key>Label</key>
+	            <string>com.jessewo.kcptun_client</string>
+	            <key>ProgramArguments</key>
+	            <array>
+	            	<string>/usr/local/bin/kcptun_client</string>
+	            	<string>-c</string>
+	            	<string>/etc/kcptun_client_config.json</string>
+	            </array>
+	            <key>StandardErrorPath</key>
+	            <string>/Users/jessewo/Library/Logs/kcptun/kcptun_client.log</string>
+	            <key>StandardOutPath</key>
+	            <string>/Users/jessewo/Library/Logs/kcptun/kcptun_client.log</string>
+	            <key>Debug</key>
+	            <true/>
+            </dict>
+            </plist>
+            ```
+            字段解释
+            - Label :Contains a unique string that identifies your daemon to launchd. (required) (任务的唯一标示)
+
+            - ProgramArguments: Contains the arguments used to launch your daemon. (required) (命令行)
+
+            - KeepAlive :This key specifies whether your daemon launches on-demand or must always be running. It is recommended that you design your daemon to be launched on-demand. (开机自启)
+            
+            参考文档:
+            
+            - [Apple官方文档](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html)<br>
+            - [利用 Launchd 定制 Mac 启动任务](https://sspai.com/post/37258#01)
             
         - GUI方式
             
@@ -423,5 +472,8 @@ systemctl enable haproxy
         下载安装 shadowsocks 的 `kcptun` 插件.<br/>
         https://github.com/shadowsocks/kcptun-android <br/>
         输入配置, 修改端口号.
+    
+    - OpenWrt
+        
 - 测速
 fast.com
