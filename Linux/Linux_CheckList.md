@@ -1,5 +1,5 @@
 # Linux_CheckList
-## 0. 前言
+## 0. 前言
 
 目前云服务器系统主要分为两种: Ubuntu 和 CentOS, 两者都是基于Linux内核的发行版. 对于小白用户, 以下是最基本的区别...
 
@@ -30,7 +30,7 @@ Ubuntu 14.04.5 LTS
 ### 其他可以折腾的Linux终端
 | 设备 | 系统 | 系列 | 包管理器 | 备注 |
 | :---: | :---: | :---: | :---: | :---: |
-| Raspberry(树莓派) | Raspbian | Debian | apt | https://www.raspberrypi.org/downloads |
+| Raspberry(树莓派) | Raspbian | Debian | apt | https://www.raspberrypi.org/downloads |
 | embedded devices(主要指路由器) | OpenWrt(LEDE) | Linux | opkg | optware, https://openwrt.org/ <br/>https://github.com/lede-project/source |
 | embedded devices | Entware | Linux | opkg | https://github.com/Entware/Entware/wiki |
 | Android devices | Termux | Linux | pkg/apt | 限Android 5.0以上系统, 基于chroot, https://termux.com/ <br>https://github.com/termux/termux-app |
@@ -282,5 +282,5 @@ fpath=\(~/.zsh/completion $fpath\) autoload -Uz compinit && compinit -i
 exec $SHELL -l
 ```
 
-## 4. [梯子](https://github.com/JesseWo/NOTBOOK/blob/master/Linux/labber.md)
+## 4. [梯子](https://github.com/JesseWo/NOTBOOK/blob/master/Linux/ladder.md)
 

@@ -1,5 +1,4 @@
 # 梯子
----
 ## 1. SS (境外服务器上安装)
 - Install
     
@@ -111,7 +110,7 @@ systemctl enable haproxy
     - Mac
         - cli方式
             
-            1. 下载安装
+            1. 下载安装
             ```bash
             # https://github.com/xtaci/kcptun/releases 下载最新版kcptun
             wget https://github.com/xtaci/kcptun/releases/download/v20181114/kcptun-darwin-amd64-20181114.tar.gz
@@ -193,9 +192,9 @@ systemctl enable haproxy
             </plist>
             ```
             字段解释
-            - Label :Contains a unique string that identifies your daemon to launchd. (required) (任务的唯一标示)
+            - Label :Contains a unique string that identifies your daemon to launchd. (required) (任务的唯一标示)
 
-            - ProgramArguments: Contains the arguments used to launch your daemon. (required) (命令行)
+            - ProgramArguments: Contains the arguments used to launch your daemon. (required) (命令行)
 
             - KeepAlive :This key specifies whether your daemon launches on-demand or must always be running. It is recommended that you design your daemon to be launched on-demand. (开机自启)
             
