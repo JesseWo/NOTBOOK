@@ -9,7 +9,7 @@
 
 当然根据自己的个人习惯, 我还是选择了Ubuntu
 
-### 0. vps选择调研
+## 0. vps选择调研
 
 知乎: [国外或香港有哪些好用的 VPS 或者独立主机？](https://www.zhihu.com/question/21432244) 赵荣部落: [精选便宜VPS主机](http://www.zrblog.net/10dao)
 
@@ -23,9 +23,9 @@ cat /etc/issue
 Ubuntu 14.04.5 LTS
 ```
 
-### 1. 基本配置
+## 1. 基本配置
 
-#### 1.1 ssh配置免登陆
+### 1.1 ssh配置免登陆
 
 ```bash
 #在你本机, 将ssh公钥上传到vps, 以下命令回车后输入登录密码
@@ -34,11 +34,11 @@ ssh-copy-id root@your_vps_ip
 
 具体参见 [Linux免密码SSH登录（公钥登录）](https://www.jianshu.com/p/7f5f727a2b60)
 
-#### 1.2 配置安全组规则\(针对阿里云服务器\)
+### 1.2 配置安全组规则\(针对阿里云服务器\)
 
 当你发现自己搭建的http服务, 通过本地回环地址\(127.0.0.1\)可以访问, 通过公网IP却没法访问时, 第一时间肯定想到了是防火墙作祟, 但当用 `iptables -t filter -L` 查看 `filter` 表的规则却是空的...好诡异! 后来发现在阿里云控制台可以配置防火墙规则....md 默认情况下, 入方向只允许SSH\(22端口\)访问, 若需开启http/https/ftp/mysql以及其他自定义服务, 需要针对入方向进行单独配置. [阿里云官方文档](https://help.aliyun.com/document_detail/25475.html?spm=5176.2020520101.0.0.50e54df5t5hHzl#concept_ngr_vht_xdb__allowHttp)
 
-#### 1.3 解决ssh超时自动断连的问题
+### 1.3 解决ssh超时自动断连的问题
 
 若你的服务器没遇到此问题, 那么可以忽略.
 
@@ -53,35 +53,7 @@ ClientAliveInterval 60
 ClientAliveCountMax 3
 ```
 
-### 2. 基础模块的安装
-
-* curl
-* wget 
-* vim 
-* git 
-* screen
-* db-util
-* openssl
-
-  ```bash
-  apt install -y curl wget vim git screen db-util openssl
-  ```
-
-* zsh 
-
-  ```bash
-  #安装 zsh
-  apt install zsh
-  #切换为zsh
-  chsh -s `which zsh`
-  #安装 oh-my-zsh (美化)
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-    zsh/master/tools/install.sh)"
-  #重连ssh后 查看当前shell
-  echo $SHELL
-  ```
-
-* 内网穿透 [frp](https://github.com/fatedier/frp/blob/master/README_zh.md)
-* 安装语言包解决如下问题:
+### 1.4 安装语言包解决如下问题:
 
   ```text
   perl: warning: Setting locale failed.
@@ -98,21 +70,61 @@ ClientAliveCountMax 3
   apt install language-pack-zh-hans
   ```
 
-* FTP
+## 2. 基础模块的安装
 
-  [ubuntu搭建ftp服务](https://www.jianshu.com/p/dec051c3f878)
+```bash
+apt install -y curl wget vim git screen db-util openssl
+```
 
-* [SSMTP](https://wiki.archlinux.org/index.php/SSMTP)
+- zsh / oh-my-zsh
 
-### 3. 开发环境配置
+    命令行美化/易用
+  ```bash
+  #安装 zsh
+  apt install zsh
+  #切换为zsh
+  chsh -s `which zsh`
+  #安装 oh-my-zsh (美化)
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-    zsh/master/tools/install.sh)"
+  #重连ssh后 查看当前shell
+  echo $SHELL
+  ```
 
-* **python**
+- 内网穿透 
+
+    [frp](https://github.com/fatedier/frp/blob/master/README_zh.md)
+
+- 文件传输
+    - curl
+    - wget
+    - git
+    
+        对于 OpenWrt 需要额外安装 `git-http`
+        ```
+        opkg install git git-http
+        ```
+    - scp
+    - rsync
+    - FTP
+    
+        [ubuntu搭建ftp服务](https://www.jianshu.com/p/dec051c3f878)
+    - sftp
+
+- [SSMTP](https://wiki.archlinux.org/index.php/SSMTP)
+- vim 
+- screen
+- db-util
+- openssl
+
+## 3. 开发环境配置
+
+- python
 
   ```bash
   apt install python python3
   ```
 
-* **node**
+- node
 
   ```bash
   #node版本管理器 nvm
@@ -129,7 +141,7 @@ ClientAliveCountMax 3
   npm install -g cnpm --registry=https://registry.npm.taobao.org
   ```
 
-* **openjdk**
+- openjdk
 
   jre
 
@@ -143,14 +155,15 @@ ClientAliveCountMax 3
    apt install openjdk-8-jdk
   ```
 
-* **gcc**
+- gcc
 
   ```text
   apt install build-essential libtool
   ```
 
-* **Nginx**
-* **Mysql**
+- Nginx
+
+- Mysql
   ```bash
   #安装server端
   apt install mysql-server
@@ -162,7 +175,7 @@ ClientAliveCountMax 3
   apt install mysql-client
   ```
 
-- #### [mangoDB](https://www.mongodb.com) 
+- [mangoDB](https://www.mongodb.com) 
     * [中文一](http://www.mongodb.org.cn/tutorial/56.html)
     * [中文二](http://www.mongoing.com/docs/tutorial/install-mongodb-on-ubuntu.html)
 
@@ -260,10 +273,13 @@ exec $SHELL -l
 ## 4. 梯子
 ---
 ### 4.1 SS (境外服务器上安装)
-  * **Install**   [Github地址](https://github.com/shadowsocks)
-  * **Config**
-  ```vim /etc/shadowsocks.json
-```
+- Install
+    
+    [Github地址](https://github.com/shadowsocks)
+- Config
+    ```
+    vim /etc/shadowsocks.json
+    ```
 
 * **Optimize**
 
@@ -277,15 +293,15 @@ exec $SHELL -l
 
 [raspberrypi](https://www.jianshu.com/p/87f19de08877)
 
-#### 4.2 加速
+### 4.2 加速
 
-**4.2.1 锐捷加速**
+#### 4.2.1 锐捷加速
 
 [https://www.freehao123.com/vps-net-speeder-serverspeeder/](https://www.freehao123.com/vps-net-speeder-serverspeeder/) [https://www.91yun.org/serverspeeder91yun](https://www.91yun.org/serverspeeder91yun)
 
-**4.2.2 谷歌BBR加速\(✨\)**
+#### 4.2.2 谷歌BBR加速\(✨\)
 
-Google开源TCP [BBR拥塞控制算法](https://github.com/google/bbr)（简称BBR），可以应用到常规的KVM和XEN架构的VPS、服务器中，用来提升服务器的速度。 [Ubuntu升级内核,开启BBR加速]() **需升级内核，五星推荐，实测效果非常明显（ping值虽没有明显改善，但下行速度提升相当明显）。** 
+>Google开源TCP [BBR拥塞控制算法](https://github.com/google/bbr)（简称BBR），可以应用到常规的KVM和XEN架构的VPS、服务器中，用来提升服务器的速度。 [Ubuntu升级内核,开启BBR加速]() **需升级内核，五星推荐，实测效果非常明显（ping值虽没有明显改善，但下行速度提升相当明显）。** 
 
 确定bbr已经成功开启
 ```bash
@@ -298,7 +314,7 @@ tcp_bbr                 6015  17
 
 因新升级后的内核版本过高，锐捷加速不支持此内核。所以目前两种加速方式只能二选一 1.2
 
-**4.2.3 SS中继加速\(境内服务器上安装\)**
+#### 4.2.3 SS中继加速\(境内服务器上安装\)
 
 中继加速（也叫中转，因为国内VPS效果最好所以一般都叫国内中转），是一种技术难度低，但是颇费钱的一种方法。而且要选好的服务器，加速效果才明显。原理如下:
 
@@ -347,8 +363,8 @@ systemctl enable haproxy
 [以上参考](https://doub.io/ss-jc29/)
 
 
-**4.2.4 KCP加速**
-- 了解
+#### 4.2.4 KCP加速
+- 项目简介
     - [KCP github](https://github.com/skywind3000/kcp)
     - [kcptun github](https://github.com/xtaci/kcptun)
 
@@ -475,5 +491,7 @@ systemctl enable haproxy
     
     - OpenWrt
         
+        [luci-app-kcptun](https://github.com/kuoruan/luci-app-kcptun)
+
 - 测速
 fast.com
