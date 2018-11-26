@@ -130,13 +130,13 @@ apt install -y curl wget vim git screen db-util openssl
 
 ## 3. 开发环境配置
 
-- python
+### 3.1 python
 
   ```bash
   apt install python python3
   ```
 
-- node
+### 3.2 node
 
   ```bash
   #node版本管理器 nvm
@@ -153,7 +153,7 @@ apt install -y curl wget vim git screen db-util openssl
   npm install -g cnpm --registry=https://registry.npm.taobao.org
   ```
 
-- openjdk
+### 3.3 openjdk
 
   jre
 
@@ -173,9 +173,10 @@ apt install -y curl wget vim git screen db-util openssl
   apt install build-essential libtool
   ```
 
-- Nginx
+### 3.4 Nginx
 
-- Mysql
+### 3.5 缓存/数据库
+- 3.5.1 Mysql
   ```bash
   #安装server端
   apt install mysql-server
@@ -187,12 +188,12 @@ apt install -y curl wget vim git screen db-util openssl
   apt install mysql-client
   ```
 
-- [mangoDB](https://www.mongodb.com) 
+- 3.5.2 [mangoDB](https://www.mongodb.com) 
     * [中文一](http://www.mongodb.org.cn/tutorial/56.html)
     * [中文二](http://www.mongoing.com/docs/tutorial/install-mongodb-on-ubuntu.html)
 
 
-- [Redis](https://redis.io/)    ([中文](http://www.redis.cn))
+- 3.5.3 [Redis](https://redis.io/)    ([中文](http://www.redis.cn))
 1. 安装
 ```bash
 wget http://download.redis.io/releases/redis-5.0.0.tar.gz
@@ -211,7 +212,7 @@ service redis-server restart
 systemctl enable redis-server
 ```
 
-- #### Docker [官网cn](https://www.docker-cn.com/)
+### 3.6 Docker [官网cn](https://www.docker-cn.com/)
 1. [安装CE社区版](https://docs.docker.com/install/linux/docker-ce/ubuntu/), 首先确认系统是否支持, 针对ubuntu系统必须是以下的64位版本
 ```
 Artful 17.10 \(Docker CE 17.11 Edge and higher only\) Xenial 16.04 \(LTS\) Trusty 14.04 \(LTS\)
@@ -266,18 +267,19 @@ service docker restart
 
 5. 命令行自动补全 [Command-line completion](https://docs.docker.com/compose/completion/)
 
-#### 5. zsh
-5.1. 在用户home目录
+    对于zsh
+
+- 5.1 在用户home目录
 ```bash
 mkdir -p ~/.zsh/completion curl -L [https://raw.githubusercontent.com/docker/compose/1.21.2/contrib/completion/zsh/\_docker-compose](https://raw.githubusercontent.com/docker/compose/1.21.2/contrib/completion/zsh/_docker-compose) &gt; ~/.zsh/completion/\_docker-compose
 ```
 
-5.2. 然后在 ```~/.zshrc``` 中添加
+- 5.2 然后在 ```~/.zshrc``` 中添加
 ```
 fpath=\(~/.zsh/completion $fpath\) autoload -Uz compinit && compinit -i
 ```
 
-5.3. 最后重启shell
+- 5.3 最后重启shell
 ```bash
 exec $SHELL -l
 ```
