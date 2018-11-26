@@ -1,5 +1,5 @@
-梯子
-# 1. SS (境外服务器上安装)
+# 1. SS 
+境外服务器上安装
 - [官网](http://shadowsocks.org/en/index.html)
 - [Github](https://github.com/shadowsocks)
 - [Feature Comparison across Different Versions](https://github.com/shadowsocks/shadowsocks/wiki/Feature-Comparison-across-Different-Versions)
@@ -34,8 +34,8 @@
 > sslocal 运行后, 浏览器并不会直接走socks5代理, 需要使用 [SwitchyOmega](https://github.com/FelisCatus/SwitchyOmega) 插件进行代理. (sslocal 相当于实现了 socks5 协议的server端, SwitchyOmega 相当于实现了 socks5 的 client 端)
 
 以下为配置方式:
-![proxy模式](../images/switchyOmega_proxy.jpg)
-![auto-proxy模式](../images/switchyOmega_auto.jpg)
+![proxy模式](/images/switchyOmega_proxy.jpg)
+![auto-proxy模式](/images/switchyOmega_auto.jpg)
 >规则列表网址: https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 
 ## Terminal 代理
