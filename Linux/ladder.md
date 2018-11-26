@@ -1,32 +1,80 @@
-# 梯子
-## 1. SS (境外服务器上安装)
-- Install
-    
-    [Github地址](https://github.com/shadowsocks)
-- Config
-    ```
-    vim /etc/shadowsocks.json
-    ```
+梯子
+# 1. SS (境外服务器上安装)
+- [官网](http://shadowsocks.org/en/index.html)
+- [Github](https://github.com/shadowsocks)
+- [Feature Comparison across Different Versions](https://github.com/shadowsocks/shadowsocks/wiki/Feature-Comparison-across-Different-Versions)
 
-* **Optimize**
+| platform | github | abstract | 备注 |
+| :-: | :-: | :-: | :-: |
+| All | [shadowsocks-libev](https://github.com/shadowsocks/shadowsocks-libev) | libv版本: core | **☆☆☆☆☆** | 
+| All | [shadowsocks](https://github.com/shadowsocks/shadowsocks/tree/master) | python版本: core
+| Linux | [shadowsocks-qt5](https://github.com/shadowsocks/shadowsocks-qt5) | core + UI, Linux + mac + windows 跨平台, mac和Windows两个平台需要根据源码自行编译
+| Mac | [shadowsocksX-NG](https://github.com/shadowsocks/ShadowsocksX-NG) | core + UI | 配置并启动后, 浏览器端可直接使用, 但 terminal 需要搭配 proxychains 使用
+| Windows | [shadowsocks-windows](https://github.com/shadowsocks/shadowsocks-windows) | core + UI
+| Android | [shadowsocks-android](https://github.com/shadowsocks/shadowsocks-android) | core + UI | 配置并启动后可直接使用
+| IOS | [superwingy] | core + UI | 配置并启动后可直接使用
+| OpenWrt | core: [openwrt-shadowsocks](https://github.com/shadowsocks/openwrt-shadowsocks)<br>UI for config: [luci-app-shadowsocks](https://github.com/shadowsocks/luci-app-shadowsocks) | 路由器 | 可配置透明代理
+
+- ss-redir
+    >//todo
+    
+- ss-tunnel
+    >//todo
+
+* Optimize
 
   [Optimizing-Shadowsocks](https://github.com/shadowsocks/shadowsocks/wiki/Optimizing-Shadowsocks)
 
   [TCP-Fast-Open](https://github.com/shadowsocks/shadowsocks/wiki/TCP-Fast-Open)
 
-* **Log**
+* Log
 
   `less /var/log/shadowsocks.log`
+## 浏览器代理
+> sslocal 运行后, 浏览器并不会直接走socks5代理, 需要使用 [SwitchyOmega](https://github.com/FelisCatus/SwitchyOmega) 插件进行代理. (sslocal 相当于实现了 socks5 协议的server端, SwitchyOmega 相当于实现了 socks5 的 client 端)
+
+以下为配置方式:
+![proxy模式](../images/switchyOmega_proxy.jpg)
+![auto-proxy模式](../images/switchyOmega_auto.jpg)
+>规则列表网址: https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
+
+## Terminal 代理
+> sslocal 运行后, 终端并不会直接走 socks5 代理, 需要使用cli工具 [proxychains](https://github.com/rofl0r/proxychains-ng) 进行终端代理. (作用等同于chrome插件 SwitchyOmega)
+- 安装
+```bash
+# Linux
+sudo apt install proxychains
+# Mac
+brew install proxychains-ng
+```
+- 配置
+```bash
+# Linux
+vim /etc/proxychains.conf
+# Mac
+vim /usr/local/etc/proxychains.conf
+```
+在这个配置文件最下面有[ProxyList]这么一行，在这行下面添加上
+```
+socks5  127.0.0.1   1080
+```
+如果有别的比如 `socks4 127.0.0.1 9050`, 就把它给注释掉
+- 使用
+
+在原有命令前加上 `proxychains` , 比如:
+```
+proxychains git clone https://github.com/haad/proxychains.git
+```
 
 [raspberrypi](https://www.jianshu.com/p/87f19de08877)
 
-## 2. 加速
+# 2. 加速
 
-### 2.1 锐捷加速
+## 2.1 锐捷加速
 
 [https://www.freehao123.com/vps-net-speeder-serverspeeder/](https://www.freehao123.com/vps-net-speeder-serverspeeder/) [https://www.91yun.org/serverspeeder91yun](https://www.91yun.org/serverspeeder91yun)
 
-### 2.2 谷歌BBR加速\(✨\)
+## 2.2 谷歌BBR加速\(✨\)
 
 >Google开源TCP [BBR拥塞控制算法](https://github.com/google/bbr)（简称BBR），可以应用到常规的KVM和XEN架构的VPS、服务器中，用来提升服务器的速度。 [Ubuntu升级内核,开启BBR加速]() **需升级内核，五星推荐，实测效果非常明显（ping值虽没有明显改善，但下行速度提升相当明显）。** 
 
@@ -41,7 +89,7 @@ tcp_bbr                 6015  17
 
 因新升级后的内核版本过高，锐捷加速不支持此内核。所以目前两种加速方式只能二选一 1.2
 
-### 2.3 SS中继加速\(境内服务器上安装\)
+## 2.3 SS中继加速\(境内服务器上安装\)
 
 中继加速（也叫中转，因为国内VPS效果最好所以一般都叫国内中转），是一种技术难度低，但是颇费钱的一种方法。而且要选好的服务器，加速效果才明显。原理如下:
 
@@ -90,7 +138,7 @@ systemctl enable haproxy
 [参考文档](https://doub.io/ss-jc29/)
 
 
-### 2.4 KCP加速
+## 2.4 KCP加速
 - 项目简介
     - [KCP github](https://github.com/skywind3000/kcp)
     - [kcptun github](https://github.com/xtaci/kcptun)
@@ -161,7 +209,7 @@ systemctl enable haproxy
             使用 `launchd` 配置开机自启
             (据说 `Linux` 中的 `Systemd` 就是抄袭的 `launchd`)<br>
             ```
-            # 进入 launchd 配置文件目录
+            # 进入 launchd 配置文件目录
             cd ~/Library/LaunchAgents
             # 新建并编辑配置文件(名字自己起, 也可以用vscode, xcode等其他编辑器编辑)
             vim com.jessewo.kcptun_client.plist

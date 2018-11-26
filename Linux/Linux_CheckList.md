@@ -1,5 +1,5 @@
 # Linux_CheckList
-## 0. 前言
+## 0. 前言
 
 目前云服务器系统主要分为两种: Ubuntu 和 CentOS, 两者都是基于Linux内核的发行版. 对于小白用户, 以下是最基本的区别...
 
@@ -97,7 +97,7 @@ apt install -y curl wget vim git screen db-util openssl
   #切换为zsh
   chsh -s `which zsh`
   #安装 oh-my-zsh (美化)
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-    zsh/master/tools/install.sh)"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   #重连ssh后 查看当前shell
   echo $SHELL
   ```
@@ -111,7 +111,7 @@ apt install -y curl wget vim git screen db-util openssl
     - wget
     - git
     
-        对于 OpenWrt 需要额外安装 `git-http`
+        对于 OpenWrt 需要额外安装 `git-http`
         ```
         opkg install git git-http
         ```
@@ -175,7 +175,7 @@ apt install -y curl wget vim git screen db-util openssl
 
 ### 3.4 Nginx
 
-### 3.5 缓存/数据库
+### 3.5 缓存/数据库
 - 3.5.1 Mysql
   ```bash
   #安装server端
