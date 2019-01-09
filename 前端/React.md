@@ -67,24 +67,10 @@ webpack 升级到4.3.x后, `ExtractTextWebpackPlugin` 会报
 - [react-app-rewired](https://github.com/timarney/react-app-rewired)
     > 一种修改 `create-react-app webpack` 配置的社区解决方案, 不用 `eject` 也不用直接修改 `react-script`;
 
-## node
-- [npm官方文档](https://docs.npmjs.com/)
-- [npm: package.json](https://docs.npmjs.com/files/package.json)
-- [npm scripts 使用指南](http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html)
-
 环境变量
 - [process.env](http://nodejs.cn/api/process.html#process_process_env)
 - [dotenv](https://github.com/motdotla/dotenv)
 - [webpack 使用环境变量](https://www.webpackjs.com/guides/environment-variables/)
-
-## 内存缓存
-- [Redis](http://www.redis.net.cn/)
-- [node-Redis](https://www.npmjs.com/package/redis)
-
-## 数据库
-- [MongoDB](https://docs.mongodb.com/guides/)
-- [MongoDB 中文](http://www.mongodb.org.cn/tutorial/)
-- [mongoose](http://mongoosejs.com/docs/index.html)
 
 ## 轮子
 - [Promise解决方案: bluebird](http://bluebirdjs.com/docs/getting-started.html)
@@ -97,17 +83,3 @@ webpack 升级到4.3.x后, `ExtractTextWebpackPlugin` 会报
 - [二维码生成: qrcode.react](https://github.com/zpao/qrcode.react)
 - [apk和ipa包解析: isomorphic-pkg-reader](https://www.npmjs.com/package/isomorphic-pkg-reader)
 - [优秀轮子集锦](https://ant.design/docs/react/recommendation-cn)
-
-### 用户系统设计
-- [短UUID生成: hashids](https://github.com/ivanakimov/hashids.js)
-- [UUID生成(RFC4122): node-uuid](https://github.com/kelektiv/node-uuid)
-- [koa-session2](https://github.com/Secbone/koa-session2#readme)
-- [nodemail: 发邮件](https://nodemailer.com/about/)
-- [登录验证码生成]()
-- [加盐密码哈希：如何正确使用](http://blog.jobbole.com/61872/)
-- [密码存储加密: 慢哈希算法介绍以及各语言的实现](https://paragonie.com/blog/2016/02/how-safely-store-password-in-2016#nodejs)
-- [node: bcrypt](https://www.npmjs.com/package/bcrypt)
-
-## 优秀项目
-- [Nodeclub: 使用 Node.js 和 MongoDB 开发的社区系统](https://github.com/cnodejs/nodeclub)
-- [react 后台管理系统解决方案](https://github.com/yezihaohao/react-admin)
