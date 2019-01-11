@@ -1,4 +1,7 @@
 # 基础配置
+Using webpack aliases: 
+[vscode jsconfig.json](https://code.visualstudio.com/docs/languages/jsconfig)
+
 ## git
 1. gitignore
     > 一句命令创建 ```.gitignore```
