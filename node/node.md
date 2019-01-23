@@ -14,7 +14,7 @@
 - [MongoDB 中文](http://www.mongodb.org.cn/tutorial/)
 - [mongoose](http://mongoosejs.com/docs/index.html)
 
-## 开源分布式存储
+## 开源分布式存储
 ### 1. 调研资料
 ```
 分布式存储按其存储接口分为三种：文件存储、块存储和对象存储。
@@ -29,11 +29,12 @@
 对象存储系统综合了NAS和SAN的优点，同时具有SAN的高速直接访问和NAS的数据共享等优势。以对象作为基本的存储单元，向外提供RESTful数据读写接口，常以网络服务的形式提供数据访问。主要的对象存储系统有AWS、swift和ceph对象存储。主要用来存储非结构化数据。
 ```
 ### 参考
+- [阿里云OSS相关基本概念介绍](https://help.aliyun.com/document_detail/31827.html?spm=a2c4g.11186623.2.17.3d2c491dhNZcL5#concept-izx-fmt-tdb)
 - [开源分布式存储系统的对比](https://blog.csdn.net/zzq900503/article/details/80020725)
 - [为什么对象存储在蚕食世界？](https://www.zhihu.com/question/48259783)
 - [glusterfs：优秀开源分布式存储系统](https://zhuanlan.zhihu.com/p/45060910)
 
-### 2. 开源项目
+### 2. 开源项目
 - ceph
     - [docs](http://docs.ceph.com/docs/master/start/intro/)
     - [github](https://github.com/ceph/ceph)
@@ -46,7 +47,7 @@
 
 - 其他
     - oss-server (java实现)
-        > 简易开源项目, 目测是基于文件系统, 非oss
+        > 简易开源项目, 目测是基于文件系统, 非oss
         - [docs](http://oss-server.mydoc.io/)
         - [github](https://github.com/xiaoymin/oss-server)
 
@@ -65,6 +66,8 @@
     - 防重复原理
 - [json web token](https://github.com/auth0/node-jsonwebtoken)
 - [koa-session2](https://github.com/Secbone/koa-session2#readme)
+- API token (内部服务api调用)
+    //todo
 
 ### 3. 密码安全
 - 存储安全
@@ -75,6 +78,9 @@
     - https
     - 加密传输
 
+## 其他
+- [二维码生成: qrcode.react](https://github.com/zpao/qrcode.react)
+- [apk和ipa包解析: isomorphic-pkg-reader](https://www.npmjs.com/package/isomorphic-pkg-reader)
 
 ## 优秀项目
 - [Nodeclub: 使用 Node.js 和 MongoDB 开发的社区系统](https://github.com/cnodejs/nodeclub)

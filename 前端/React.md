@@ -80,6 +80,4 @@ webpack 升级到4.3.x后, `ExtractTextWebpackPlugin` 会报
     - [解决引入antd样式无效问题](https://www.jianshu.com/p/a25ba1adeda2)
     - [解决css-modules与antd冲突问题(antd样式不生效)](https://www.jianshu.com/p/51ff1c8be301)
 
-- [二维码生成: qrcode.react](https://github.com/zpao/qrcode.react)
-- [apk和ipa包解析: isomorphic-pkg-reader](https://www.npmjs.com/package/isomorphic-pkg-reader)
 - [优秀轮子集锦](https://ant.design/docs/react/recommendation-cn)
