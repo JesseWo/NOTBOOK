@@ -33,6 +33,7 @@
 - [开源分布式存储系统的对比](https://blog.csdn.net/zzq900503/article/details/80020725)
 - [为什么对象存储在蚕食世界？](https://www.zhihu.com/question/48259783)
 - [glusterfs：优秀开源分布式存储系统](https://zhuanlan.zhihu.com/p/45060910)
+- [分布式存储系统 知识体系](http://wuchong.me/blog/2014/08/07/distributed-storage-system-knowledge/)
 
 ### 2. 开源项目
 - ceph
@@ -79,9 +80,22 @@
     - 加密传输
 
 ## 其他
-- [二维码生成: qrcode.react](https://github.com/zpao/qrcode.react)
+- 二维码生成
+    - [qrcode.react](https://github.com/zpao/qrcode.react)
+    - [生成中间带LOGO的二维码: qrcode-logo](https://github.com/fisherw/qrcode-logo)
+    - 图片合成
+        - [GraphicsMagick](http://www.graphicsmagick.org/)
+        - [node: gm](https://github.com/aheckmann/gm)
+        - [node服务器如何生成有logo和背景的带参数二维码](https://blog.csdn.net/AF52520/article/details/77971653)
+
 - [apk和ipa包解析: isomorphic-pkg-reader](https://www.npmjs.com/package/isomorphic-pkg-reader)
+    - [isomorphic-pkg-reader 改进增强版](https://github.com/JesseWo/isomorphic-pkg-reader)
+    - [isomorphic-unzip](http://npm.taobao.org/package/isomorphic-unzip)
+    - 提取ipa中的icon
+        - Apple对png图片进行了了自定义的[pngcrush](https://pmt.sourceforge.io/pngcrush/)压缩，有压缩自然就有还原工具[pngdefry](http://www.jongware.com/pngdefry.html)
+        - [node-pngdefry](https://github.com/JesseWo/node-pngdefry)
 
 ## 优秀项目
 - [Nodeclub: 使用 Node.js 和 MongoDB 开发的社区系统](https://github.com/cnodejs/nodeclub)
 - [react 后台管理系统解决方案](https://github.com/yezihaohao/react-admin)
+- [教你搭建App内测下载平台](https://www.jianshu.com/p/48b38a2d0bbb)
