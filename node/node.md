@@ -93,7 +93,9 @@
     - [isomorphic-unzip](http://npm.taobao.org/package/isomorphic-unzip)
     - 提取ipa中的icon
         - Apple对png图片进行了了自定义的[pngcrush](https://pmt.sourceforge.io/pngcrush/)压缩，有压缩自然就有还原工具[pngdefry](http://www.jongware.com/pngdefry.html)
-        - [node-pngdefry](https://github.com/JesseWo/node-pngdefry)
+        - [node-pngdefry: 对pngdefry cli的node封装](https://github.com/JesseWo/node-pngdefry)
+        - [REC-PNG-20031110: PNG格式标准](https://www.w3.org/TR/2003/REC-PNG-20031110/)
+        - [png.js](https://github.com/TencentWSRD/png.js)
 
 ## 优秀项目
 - [Nodeclub: 使用 Node.js 和 MongoDB 开发的社区系统](https://github.com/cnodejs/nodeclub)
