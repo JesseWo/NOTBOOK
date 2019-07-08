@@ -82,13 +82,18 @@ ClientAliveCountMax 3
   apt install language-pack-zh-hans
   ```
 
+### 1.5 解决终端中文乱码问题
+```bash
+sudo locale-gen zh_CN.UTF-8
+```
+
 ## 2. 基础模块的安装
 
 ```bash
 apt install -y curl wget vim git screen db-util openssl
 ```
 
-- zsh / oh-my-zsh
+- zsh / [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
     命令行美化/易用
   ```bash
@@ -96,8 +101,11 @@ apt install -y curl wget vim git screen db-util openssl
   apt install zsh
   #切换为zsh
   chsh -s `which zsh`
-  #安装 oh-my-zsh (美化)
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+  #安装 oh-my-zsh (主题美化命令行提示以及其他扩展, 文件下载缓慢的话需要先搭梯子)
+  curl -Lo install.sh https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+  sh install.sh
+
   #重连ssh后 查看当前shell
   echo $SHELL
   ```
@@ -260,8 +268,14 @@ service docker restart
 参考: [Docker 中国官方镜像加速](https://www.docker-cn.com/registry-mirror)
 
 4. 安装 [docker-compose](https://docs.docker.com/compose/install/#install-compose)
-```
-//下载Docker Compose的最新版本 sudo curl -L [https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$\(uname](https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$%28uname) -s\)-$\(uname -m\) -o /usr/local/bin/docker-compose //添加可执行权限 sudo chmod +x /usr/local/bin/docker-compose //查看 docker-compose --version
+```shell
+# 下载Docker Compose的最新版本 
+sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+# 添加可执行权限 
+sudo chmod +x /usr/local/bin/docker-compose 
+# 查看 
+docker-compose --version
 
 ```
 
@@ -271,10 +285,11 @@ service docker restart
 
 - 5.1 在用户home目录
 ```bash
-mkdir -p ~/.zsh/completion curl -L [https://raw.githubusercontent.com/docker/compose/1.21.2/contrib/completion/zsh/\_docker-compose](https://raw.githubusercontent.com/docker/compose/1.21.2/contrib/completion/zsh/_docker-compose) &gt; ~/.zsh/completion/\_docker-compose
+mkdir -p ~/.zsh/completion 
+curl -L [https://raw.githubusercontent.com/docker/compose/1.21.2/contrib/completion/zsh/\_docker-compose](https://raw.githubusercontent.com/docker/compose/1.21.2/contrib/completion/zsh/_docker-compose) &gt; ~/.zsh/completion/\_docker-compose
 ```
 
-- 5.2 然后在 ```~/.zshrc``` 中添加
+- 5.2 然后在 `~/.zshrc` 中添加
 ```
 fpath=\(~/.zsh/completion $fpath\) autoload -Uz compinit && compinit -i
 ```
@@ -283,6 +298,9 @@ fpath=\(~/.zsh/completion $fpath\) autoload -Uz compinit && compinit -i
 ```bash
 exec $SHELL -l
 ```
+
+6. [Manage Docker as a non-root user](https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user)
+> Docker 需要用户具有 sudo 权限，为了避免每次命令都输入sudo，可以把用户加入 Docker 用户组
 
 ## 4. [梯子](https://github.com/JesseWo/NOTBOOK/blob/master/Linux/ladder.md)
 
