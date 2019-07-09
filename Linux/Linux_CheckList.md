@@ -1,5 +1,4 @@
-# Linux_CheckList
-## 0. 前言
+# 0. 前言
 
 目前云服务器系统主要分为两种: Ubuntu 和 CentOS, 两者都是基于Linux内核的发行版. 对于小白用户, 以下是最基本的区别...
 
@@ -9,7 +8,7 @@
 | CentOS | Redhat | yum | 企业级用户较多,稳定性好 |
 
 当然根据自己的个人习惯, 我还是选择了Ubuntu
-### vps选择调研
+## vps选择调研
 知乎: [国外或香港有哪些好用的 VPS 或者独立主机？](https://www.zhihu.com/question/21432244) 赵荣部落: [精选便宜VPS主机](http://www.zrblog.net/10dao)
 
 我最终选择了这个 [vermach](https://virmach.com/), $12/年 以下为本人选用的vps信息
@@ -20,14 +19,14 @@ Linux jessewo 4.10.12-041012-generic #201704210512 SMP Fri Apr 21 09:14:40 UTC 2
 cat /etc/issue
 Ubuntu 14.04.5 LTS
 ```
-### 国内云服务器选择
+## 国内云服务器选择
 - 阿里云ECS
 - 腾讯云
 - 滴滴云
 - 七牛云
 - ...
 
-### 其他可以折腾的Linux终端
+## 其他可以折腾的Linux终端
 | 设备 | 系统 | 系列 | 包管理器 | 备注 |
 | :---: | :---: | :---: | :---: | :---: |
 | Raspberry(树莓派) | Raspbian | Debian | apt | https://www.raspberrypi.org/downloads |
@@ -35,9 +34,9 @@ Ubuntu 14.04.5 LTS
 | embedded devices | Entware | Linux | opkg | https://github.com/Entware/Entware/wiki |
 | Android devices | Termux | Linux | pkg/apt | 限Android 5.0以上系统, 基于chroot, https://termux.com/ <br>https://github.com/termux/termux-app |
 
-## 1. 基本配置
+# 1. 基本配置
 
-### 1.1 ssh配置免登陆
+## 1.1 ssh配置免登陆
 
 ```bash
 #在你本机, 将ssh公钥上传到vps, 以下命令回车后输入登录密码
@@ -46,11 +45,11 @@ ssh-copy-id root@your_vps_ip
 
 具体参见 [Linux免密码SSH登录（公钥登录）](https://www.jianshu.com/p/7f5f727a2b60)
 
-### 1.2 配置安全组规则\(针对阿里云服务器\)
+## 1.2 配置安全组规则\(针对阿里云服务器\)
 
 当你发现自己搭建的http服务, 通过本地回环地址\(127.0.0.1\)可以访问, 通过公网IP却没法访问时, 第一时间肯定想到了是防火墙作祟, 但当用 `iptables -t filter -L` 查看 `filter` 表的规则却是空的...好诡异! 后来发现在阿里云控制台可以配置防火墙规则....md 默认情况下, 入方向只允许SSH\(22端口\)访问, 若需开启http/https/ftp/mysql以及其他自定义服务, 需要针对入方向进行单独配置. [阿里云官方文档](https://help.aliyun.com/document_detail/25475.html?spm=5176.2020520101.0.0.50e54df5t5hHzl#concept_ngr_vht_xdb__allowHttp)
 
-### 1.3 解决ssh超时自动断连的问题
+## 1.3 解决ssh超时自动断连的问题
 
 若你的服务器没遇到此问题, 那么可以忽略.
 
@@ -65,7 +64,7 @@ ClientAliveInterval 60
 ClientAliveCountMax 3
 ```
 
-### 1.4 安装语言包解决如下问题:
+## 1.4 安装语言包解决如下问题:
 
   ```text
   perl: warning: Setting locale failed.
@@ -82,18 +81,18 @@ ClientAliveCountMax 3
   apt install language-pack-zh-hans
   ```
 
-### 1.5 解决终端中文乱码问题
+## 1.5 解决终端中文乱码问题
 ```bash
 sudo locale-gen zh_CN.UTF-8
 ```
 
-## 2. 基础模块的安装
-
+# 2. 基础模块的安装
+## 2.1
 ```bash
 apt install -y curl wget vim git screen db-util openssl
 ```
 
-- zsh / [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+## 2.2 zsh / [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
     命令行美化/易用
     
@@ -130,26 +129,28 @@ apt install -y curl wget vim git screen db-util openssl
   echo $SHELL
   ```
 
-- 内网穿透 
+## 2.3 内网穿透 
 
-    [frp](https://github.com/fatedier/frp/blob/master/README_zh.md)
+  - [frp](https://github.com/fatedier/frp/blob/master/README_zh.md)
+  
+  - [nps](https://github.com/cnlh/nps)
 
-- 文件传输
-    - curl
-    - wget
-    - git
+## 2.4 文件传输
+  - curl
+  - wget
+  - git
     
-        对于 OpenWrt 需要额外安装 `git-http`,
+    对于 OpenWrt 需要额外安装 `git-http`,
         解决 "git clone fatal: Unable to find remote helper for 'http'" 的问题
-        ```
-        opkg install git git-http
-        ```
-    - scp
-    - rsync
-    - FTP
+      ```
+      opkg install git git-http
+      ```
+  - scp
+  - rsync
+  - FTP
     
-        [ubuntu搭建ftp服务](https://www.jianshu.com/p/dec051c3f878)
-    - sftp
+      [ubuntu搭建ftp服务](https://www.jianshu.com/p/dec051c3f878)
+  - sftp
 
 - [SSMTP](https://wiki.archlinux.org/index.php/SSMTP)
 - vim 
@@ -157,15 +158,15 @@ apt install -y curl wget vim git screen db-util openssl
 - db-util
 - openssl
 
-## 3. 开发环境配置
+# 3. 开发环境配置
 
-### 3.1 python
+## 3.1 python
 
   ```bash
   apt install python python3
   ```
 
-### 3.2 node
+## 3.2 node
 
   ```bash
   #node版本管理器 nvm
@@ -182,47 +183,48 @@ apt install -y curl wget vim git screen db-util openssl
   npm install -g cnpm --registry=https://registry.npm.taobao.org
   ```
 
-### 3.3 openjdk
+## 3.3 openjdk
 
-  jre
+jre
 
-  ```text
-   apt install openjdk-8-jre
-  ```
+```text
+apt install openjdk-8-jre
+```
 
-  jdk
+jdk
 
-  ```text
-   apt install openjdk-8-jdk
-  ```
+```text
+apt install openjdk-8-jdk
+```
+gcc
 
-- gcc
+```text
+apt install build-essential libtool
+```
 
-  ```text
-  apt install build-essential libtool
-  ```
+## 3.4 Nginx
+- 反向代理
+- 配置SSL证书
 
-### 3.4 Nginx
+## 3.5 缓存/数据库
+### 3.5.1 Mysql
+```bash
+#安装server端
+apt install mysql-server
+#配置MySQL
+mysql_secure_installation
+#启动
+service mysql start
+#安装client端
+apt install mysql-client
+```
 
-### 3.5 缓存/数据库
-- 3.5.1 Mysql
-  ```bash
-  #安装server端
-  apt install mysql-server
-  #配置MySQL
-  mysql_secure_installation
-  #启动
-  service mysql start
-  #安装client端
-  apt install mysql-client
-  ```
-
-- 3.5.2 [mangoDB](https://www.mongodb.com) 
-    * [中文一](http://www.mongodb.org.cn/tutorial/56.html)
-    * [中文二](http://www.mongoing.com/docs/tutorial/install-mongodb-on-ubuntu.html)
+### 3.5.2 [mangoDB](https://www.mongodb.com) 
+* [中文一](http://www.mongodb.org.cn/tutorial/56.html)
+* [中文二](http://www.mongoing.com/docs/tutorial/install-mongodb-on-ubuntu.html)
 
 
-- 3.5.3 [Redis](https://redis.io/)    ([中文](http://www.redis.cn))
+### 3.5.3 [Redis](https://redis.io/)    ([中文](http://www.redis.cn))
 1. 安装
 ```bash
 wget http://download.redis.io/releases/redis-5.0.0.tar.gz
@@ -241,7 +243,7 @@ service redis-server restart
 systemctl enable redis-server
 ```
 
-### 3.6 [Docker](https://github.com/JesseWo/NOTBOOK/blob/master/Linux/Docker.md)
+## 3.6 [Docker](https://github.com/JesseWo/NOTBOOK/blob/master/Linux/Docker.md)
 
-## 4. [梯子](https://github.com/JesseWo/NOTBOOK/blob/master/Linux/ladder.md)
+# 4. [梯子](https://github.com/JesseWo/NOTBOOK/blob/master/Linux/ladder.md)
 
