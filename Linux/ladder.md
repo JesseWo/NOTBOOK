@@ -48,8 +48,19 @@
 ```bash
 # Linux
 sudo apt install proxychains
+
 # Mac
 brew install proxychains-ng
+```
+备用安装方案: 源码编译
+```bash
+git clone https://github.com/rofl0r/proxychains-ng.git
+cd proxychains-ng
+# needs a working C compiler, preferably gcc
+./configure --prefix=/usr --sysconfdir=/etc
+make
+make install
+make install-config (installs proxychains.conf)
 ```
 - 配置
 ```bash

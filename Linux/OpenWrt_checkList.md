@@ -4,6 +4,8 @@
 - make打包工具用法
 
 # 功能集成
+Entware
+
 ## 1. 梯子
 ### ss
 - sslocal

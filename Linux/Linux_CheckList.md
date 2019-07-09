@@ -96,11 +96,31 @@ apt install -y curl wget vim git screen db-util openssl
 - zsh / [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
     命令行美化/易用
+    
+    for common linux
   ```bash
   #安装 zsh
   apt install zsh
   #切换为zsh
+  # for linux
   chsh -s `which zsh`
+
+  #安装 oh-my-zsh (主题美化命令行提示以及其他扩展, 文件下载缓慢的话需要先搭梯子)
+  curl -Lo install.sh https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+  sh install.sh
+
+  #重连ssh后 查看当前shell
+  echo $SHELL
+  ```
+  openwrt (与常规Linux的安装方式有所区别)
+  ```bash
+  #安装 zsh
+  apt install zsh
+  #切换为zsh
+  # for openwrt (openwrt集成的busybox中没有chsh命令)
+  sed -i -- 's:/bin/bash:/usr/bin/zsh:g' /etc/passwd
+
+  opkg install ca-bundle
 
   #安装 oh-my-zsh (主题美化命令行提示以及其他扩展, 文件下载缓慢的话需要先搭梯子)
   curl -Lo install.sh https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
@@ -119,7 +139,8 @@ apt install -y curl wget vim git screen db-util openssl
     - wget
     - git
     
-        对于 OpenWrt 需要额外安装 `git-http`
+        对于 OpenWrt 需要额外安装 `git-http`,
+        解决 "git clone fatal: Unable to find remote helper for 'http'" 的问题
         ```
         opkg install git git-http
         ```
@@ -220,87 +241,7 @@ service redis-server restart
 systemctl enable redis-server
 ```
 
-### 3.6 Docker [官网cn](https://www.docker-cn.com/)
-1. [安装CE社区版](https://docs.docker.com/install/linux/docker-ce/ubuntu/), 首先确认系统是否支持, 针对ubuntu系统必须是以下的64位版本
-```
-Artful 17.10 \(Docker CE 17.11 Edge and higher only\) Xenial 16.04 \(LTS\) Trusty 14.04 \(LTS\)
-```
-
-2. 安装
-```bash
-#Update the apt package index:
-sudo apt-get update
-#Install packages to allow apt to use a repository over HTTPS:
-sudo apt-get install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    software-properties-common
-#Add Docker’s official GPG key
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-#set up the stable repository. (x86_64/amd64)
-sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
-#Update the apt package index.
-sudo apt-get update
-#install the latest version of Docker CE
-sudo apt-get install docker-ce
-#查看版本
-docker -v
-#Docker version 18.03.1-ce, build 9ee9f40
-```
-
-3. 配置镜像
-打开/etc/default/docker文件（需要sudo权限)，在文件的底部加上一行。
-```
-DOCKER\_OPTS="--registry-mirror=[https://registry.docker-cn.com](https://registry.docker-cn.com)"
-```
-
-然后重启
-```
-service docker restart
-```
-对于mac, 打开preference, 修改如下, 然后Apply&Restart
-![image.png](https://upload-images.jianshu.io/upload_images/1200965-9da0e9f2c038d0c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/340)
-
-参考: [Docker 中国官方镜像加速](https://www.docker-cn.com/registry-mirror)
-
-4. 安装 [docker-compose](https://docs.docker.com/compose/install/#install-compose)
-```shell
-# 下载Docker Compose的最新版本 
-sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-
-# 添加可执行权限 
-sudo chmod +x /usr/local/bin/docker-compose 
-# 查看 
-docker-compose --version
-
-```
-
-5. 命令行自动补全 [Command-line completion](https://docs.docker.com/compose/completion/)
-
-    对于zsh
-
-- 5.1 在用户home目录
-```bash
-mkdir -p ~/.zsh/completion 
-curl -L [https://raw.githubusercontent.com/docker/compose/1.21.2/contrib/completion/zsh/\_docker-compose](https://raw.githubusercontent.com/docker/compose/1.21.2/contrib/completion/zsh/_docker-compose) &gt; ~/.zsh/completion/\_docker-compose
-```
-
-- 5.2 然后在 `~/.zshrc` 中添加
-```
-fpath=\(~/.zsh/completion $fpath\) autoload -Uz compinit && compinit -i
-```
-
-- 5.3 最后重启shell
-```bash
-exec $SHELL -l
-```
-
-6. [Manage Docker as a non-root user](https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user)
-> Docker 需要用户具有 sudo 权限，为了避免每次命令都输入sudo，可以把用户加入 Docker 用户组
+### 3.6 [Docker](https://github.com/JesseWo/NOTBOOK/blob/master/Linux/Docker.md)
 
 ## 4. [梯子](https://github.com/JesseWo/NOTBOOK/blob/master/Linux/ladder.md)
 
