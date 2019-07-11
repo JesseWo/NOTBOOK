@@ -30,20 +30,37 @@ docker -v
 #Docker version 18.03.1-ce, build 9ee9f40
 ```
 
-### 3. 配置镜像
-打开/etc/default/docker文件（需要sudo权限)，在文件的底部加上一行。
+### 3. 镜像加速
+国内从 Docker Hub 拉取镜像有时会遇到困难，此时可以配置镜像加速器。
+
+* [Azure 中国镜像 https://dockerhub.azk8s.cn](https://github.com/Azure/container-service-for-azure-china/blob/master/aks/README.md#22-container-registry-proxy)
+* [阿里云加速器(需登录账号获取)](https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors)
+* [七牛云加速器 https://reg-mirror.qiniu.com](https://kirk-enterprise.github.io/hub-docs/#/user-guide/mirror)
+
+由于镜像服务可能出现宕机，建议同时配置多个镜像。
+
+#### 3.1 Ubuntu 16.04+、Debian 8+、CentOS 7
+对于使用 `systemd` 的系统，请在 `/etc/docker/daemon.json` 中写入如下内容（如果文件不存在请新建该文件）
+```bash
+{
+  "registry-mirrors": [
+    "https://dockerhub.azk8s.cn",
+    "https://reg-mirror.qiniu.com"
+  ]
+}
 ```
-DOCKER\_OPTS="--registry-mirror=[https://registry.docker-cn.com](https://registry.docker-cn.com)"
+注意，一定要保证该文件符合 json 规范，否则 Docker 将不能启动。
+
+之后重新启动服务。
+```bash
+sudo systemctl daemon-reload
+sudo systemctl restart docker
 ```
 
-然后重启
-```
-service docker restart
-```
-对于mac, 打开preference, 修改如下, 然后Apply&Restart
+#### 3.2 Mac
+打开preference, 修改如下, 然后Apply&Restart
 ![image.png](https://upload-images.jianshu.io/upload_images/1200965-9da0e9f2c038d0c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/340)
 
-参考: [Docker 中国官方镜像加速](https://www.docker-cn.com/registry-mirror)
 
 ### 4. docker-compose
 - [Github](https://github.com/docker/compose)
