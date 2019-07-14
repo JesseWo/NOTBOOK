@@ -2,10 +2,10 @@
 
 目前云服务器系统主要分为两种: Ubuntu 和 CentOS, 两者都是基于Linux内核的发行版. 对于小白用户, 以下是最基本的区别...
 
-| 系统 | 系列 | 包管理器 | 备注 |
-| :---: | :---: | :---: | :---: |
-| Ubuntu | Debian | apt | 在桌面应用方面做得好 |
-| CentOS | Redhat | yum | 企业级用户较多,稳定性好 |
+|  系统  |  系列  | 包管理器 |          备注           |
+| :----: | :----: | :------: | :---------------------: |
+| Ubuntu | Debian |   apt    |  在桌面应用方面做得好   |
+| CentOS | Redhat |   yum    | 企业级用户较多,稳定性好 |
 
 当然根据自己的个人习惯, 我还是选择了Ubuntu
 ## vps选择调研
@@ -26,13 +26,7 @@ Ubuntu 14.04.5 LTS
 - 七牛云
 - ...
 
-## 其他可以折腾的Linux终端
-| 设备 | 系统 | 系列 | 包管理器 | 备注 |
-| :---: | :---: | :---: | :---: | :---: |
-| Raspberry(树莓派) | Raspbian | Debian | apt | https://www.raspberrypi.org/downloads |
-| embedded devices(主要指路由器) | OpenWrt(LEDE) | Linux | opkg | optware, https://openwrt.org/ <br/>https://github.com/lede-project/source |
-| embedded devices | Entware | Linux | opkg | https://github.com/Entware/Entware/wiki |
-| Android devices | Termux | Linux | pkg/apt | 限Android 5.0以上系统, 基于chroot, https://termux.com/ <br>https://github.com/termux/termux-app |
+## [其他可以折腾的 `Linux`](https://github.com/JesseWo/NOTBOOK/blob/master/Linux/other.md)
 
 # 1. 基本配置
 
@@ -153,31 +147,43 @@ apt install -y curl wget vim git screen db-util openssl
   - sftp
 
 - [SSMTP](https://wiki.archlinux.org/index.php/SSMTP)
-- vim 
-- screen
-- db-util
-- openssl
 
+
+## 2.5 其他扩展工具
+- [icdiff](https://github.com/jeffkaufman/icdiff)
+  > 扩展 `diff` 功能
+  ```bash
+  pip install git+https://github.com/jeffkaufman/icdiff.git
+  ```
+- [tldr](https://github.com/tldr-pages/tldr)
+  >命令行doc查询工具, 比 `man` 更易用
+  ```bash
+  npm install -g tldr
+  ```
+  
 # 3. 开发环境配置
 
 ## 3.1 python
 
   ```bash
-  apt install python python3
+  apt install python python3 python-pip python3-pip
   ```
 
 ## 3.2 node
-
+- `node` 版本管理器 [nvm](https://github.com/nvm-sh/nvm)
   ```bash
-  #node版本管理器 nvm
-  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+  ```
+
+- 用 `nvm` 安装 `node`
+  ```bash
   #安装最新node LTS版本
   nvm install --lts
   #更新npm版本
   npm i -g npm
   ```
 
-  淘宝[cnpm](https://npm.taobao.org/)
+- 淘宝[cnpm](https://npm.taobao.org/)
 
   ```bash
   npm install -g cnpm --registry=https://registry.npm.taobao.org
@@ -187,18 +193,18 @@ apt install -y curl wget vim git screen db-util openssl
 
 jre
 
-```text
+```bash
 apt install openjdk-8-jre
 ```
 
 jdk
 
-```text
+```bash
 apt install openjdk-8-jdk
 ```
 gcc
 
-```text
+```bash
 apt install build-essential libtool
 ```
 

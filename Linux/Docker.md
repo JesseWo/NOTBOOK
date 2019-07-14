@@ -1,10 +1,11 @@
-# Docker [官网cn](https://www.docker-cn.com/)
-### 1. [安装CE社区版](https://docs.docker.com/install/linux/docker-ce/ubuntu/), 首先确认系统是否支持, 针对ubuntu系统必须是以下的64位版本
+# Docker
+## 1. 安装 
+[CE社区版](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+首先确认系统是否支持, 针对ubuntu系统必须是以下的64位版本
 ```
 Artful 17.10 \(Docker CE 17.11 Edge and higher only\) Xenial 16.04 \(LTS\) Trusty 14.04 \(LTS\)
 ```
 
-### 2. 安装
 ```bash
 #Update the apt package index:
 sudo apt-get update
@@ -30,7 +31,7 @@ docker -v
 #Docker version 18.03.1-ce, build 9ee9f40
 ```
 
-### 3. 镜像加速
+## 2. 镜像加速
 国内从 Docker Hub 拉取镜像有时会遇到困难，此时可以配置镜像加速器。
 
 * [Azure 中国镜像 https://dockerhub.azk8s.cn](https://github.com/Azure/container-service-for-azure-china/blob/master/aks/README.md#22-container-registry-proxy)
@@ -39,7 +40,18 @@ docker -v
 
 由于镜像服务可能出现宕机，建议同时配置多个镜像。
 
-#### 3.1 Ubuntu 16.04+、Debian 8+、CentOS 7
+### 2.1 Linux
+* 方法一: 通用脚本一键配置
+  
+因为针对不同的发行版,具体配置方式不同, 提供以下通用配置脚本:  
+```bash
+curl -sSL http://oyh1cogl9.bkt.clouddn.com/setmirror.sh | sh -s <镜像加速地址>
+```
+将镜像加速地址加入到你的Docker配置文件 `/etc/docker/daemon.json` 中。适用于 `Ubuntu / Debian / CentOS`。
+
+* 方法二: 手动配置
+> 适用于 Ubuntu 16.04+、Debian 8+、CentOS 7
+
 对于使用 `systemd` 的系统，请在 `/etc/docker/daemon.json` 中写入如下内容（如果文件不存在请新建该文件）
 ```bash
 {
@@ -57,12 +69,16 @@ sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
 
-#### 3.2 Mac
+* 参考:
+  - [the China registry mirror](https://docs.docker.com/registry/recipes/mirror/)
+  - [七牛镜像中心文档](https://kirk-enterprise.github.io/hub-docs/#/user-guide/mirror)
+
+### 2.2 Mac
 打开preference, 修改如下, 然后Apply&Restart
 ![image.png](https://upload-images.jianshu.io/upload_images/1200965-9da0e9f2c038d0c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/340)
 
 
-### 4. docker-compose
+## 3. docker-compose
 - [Github](https://github.com/docker/compose)
 - [官方文档](https://docs.docker.com/compose/)
 > Compose is a tool for defining and running multi-container Docker applications.
@@ -78,29 +94,58 @@ docker-compose --version
 
 ```
 
-### 5. 命令行自动补全 [Command-line completion](https://docs.docker.com/compose/completion/)
+## 4. 命令行自动补全 [Command-line completion](https://docs.docker.com/compose/completion/)
 
     对于zsh
 
-- 5.1 在用户home目录
+### 4.1 在用户home目录
 ```bash
 mkdir -p ~/.zsh/completion 
 curl -L [https://raw.githubusercontent.com/docker/compose/1.21.2/contrib/completion/zsh/\_docker-compose](https://raw.githubusercontent.com/docker/compose/1.21.2/contrib/completion/zsh/_docker-compose) &gt; ~/.zsh/completion/\_docker-compose
 ```
 
-- 5.2 然后在 `~/.zshrc` 中添加
+### 4.2 然后在 `~/.zshrc` 中添加
 ```
 fpath=\(~/.zsh/completion $fpath\) autoload -Uz compinit && compinit -i
 ```
 
-- 5.3 最后重启shell
+### 4.3 最后重启shell
 ```bash
 exec $SHELL -l
 ```
 
-### 6. [Manage Docker as a non-root user](https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user)
+## 5. [Manage Docker as a non-root user](https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user)
 > Docker 需要用户具有 sudo 权限，为了避免每次命令都输入sudo，可以把用户加入 Docker 用户组
 
+## 6. Q&A
+解决不能 stop/kill containers 的问题: 
+> [Can not stop Docker Container: permission denied Error](https://forums.docker.com/t/can-not-stop-docker-container-permission-denied-error/41142/6)
+> 
+禁用 [AppArmor](https://zh.wikipedia.org/wiki/AppArmor)
+
+For anyone that does not wish to completely purge AppArmor.
+
+Check status: 
+```
+sudo aa-status
+```
+
+Shutdown and prevent it from restarting:
+```
+sudo systemctl disable apparmor.service --now
+```
+Unload AppArmor profiles: 
+```
+sudo service apparmor teardown
+```
+Check status: 
+```
+sudo aa-status
+```
+
+You should now be able to stop/kill containers.
 
 # Refs.
-容器相关实现原理
+- [Docker 官网](https://www.docker.com/)
+- [Docker — 从入门到实践](https://docker_practice.gitee.io)
+- 容器相关实现原理
