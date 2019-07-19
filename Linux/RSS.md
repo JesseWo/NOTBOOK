@@ -9,6 +9,9 @@ Refs:
 - [Huginn: 烧录RSS的神器](https://cloud.tencent.com/developer/article/1405484)
 - [w3schools: RSS](https://www.w3schools.com/xml/xml_rss.asp)
 
+- [利用Huginn抓取任意网站RSS和微信公众号更新](https://wzfou.com/huginn-rss/)
+- [微信公众号 scenarios](http://huginnio.herokuapp.com/scenarios/17/download)
+
 # headless
 ## phantomjs
 > Suspend development
