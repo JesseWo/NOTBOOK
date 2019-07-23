@@ -27,6 +27,12 @@ Ubuntu server 18.04.2 LTS (GNU/Linux 4.15.0-50-generic x86_64)
 * 硬盘自动挂载
 * 硬盘休眠
 * 服务监控
+```
+wget http://prdownloads.sourceforge.net/webadmin/webmin_1.920_all.deb
+
+```
+
+
 * 数据库
 * Nginx
 * 内网穿透
