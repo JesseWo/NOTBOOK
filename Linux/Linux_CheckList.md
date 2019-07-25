@@ -86,11 +86,10 @@ sudo locale-gen zh_CN.UTF-8
 apt install -y curl wget vim git screen db-util openssl
 ```
 
-## 2.2 zsh / [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+## 2.2 命令行美化/易用
+zsh / [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
-    命令行美化/易用
-    
-    for common linux
+  for common linux
   ```bash
   #安装 zsh
   apt install zsh
@@ -105,7 +104,7 @@ apt install -y curl wget vim git screen db-util openssl
   #重连ssh后 查看当前shell
   echo $SHELL
   ```
-  openwrt (与常规Linux的安装方式有所区别)
+ for openwrt (与常规Linux的安装方式有所区别)
   ```bash
   #安装 zsh
   apt install zsh
@@ -163,7 +162,7 @@ apt install -y curl wget vim git screen db-util openssl
 ### 2.5.3  RSS 
 
   
-# 3. 开发环境配置
+# 3. 开发环境搭建
 
 ## 3.1 python
 
@@ -210,12 +209,22 @@ gcc
 apt install build-essential libtool
 ```
 
-## 3.4 Nginx
+# 4. 相关开发软件
+> 涉及 `Nginx/PHP/Mysql/MariaDB/mongodb/Redis/Jenkins/Gitlab/` 等的安装.
+
+主要有三种安装方式:
+1. 直接安装
+2. 一键脚本安装;
+   - [LNMP](https://github.com/licess/lnmp)
+3. Docker 镜像 (推荐);
+   - [Docker](https://github.com/JesseWo/NOTBOOK/blob/master/Linux/Docker.md)
+
+以下简单介绍直接安装方式:
+## 4.1 Nginx
 - 反向代理
 - 配置SSL证书
 
-## 3.5 缓存/数据库
-### 3.5.1 Mysql
+## 4.2 Mysql
 ```bash
 #安装server端
 apt install mysql-server
@@ -227,12 +236,15 @@ service mysql start
 apt install mysql-client
 ```
 
-### 3.5.2 [mangoDB](https://www.mongodb.com) 
-* [中文一](http://www.mongodb.org.cn/tutorial/56.html)
-* [中文二](http://www.mongoing.com/docs/tutorial/install-mongodb-on-ubuntu.html)
+## 4.3 mangoDB
+- [官网](https://www.mongodb.com) 
+- [中文一](http://www.mongodb.org.cn/tutorial/56.html)
+- [中文二](http://www.mongoing.com/docs/tutorial/install-mongodb-on-ubuntu.html)
 
 
-### 3.5.3 [Redis](https://redis.io/)    ([中文](http://www.redis.cn))
+## 4.4 Redis
+- [官网](https://redis.io/)
+- [Redis中文](http://www.redis.cn)
 1. 安装
 ```bash
 wget http://download.redis.io/releases/redis-5.0.0.tar.gz
@@ -251,7 +263,5 @@ service redis-server restart
 systemctl enable redis-server
 ```
 
-## 3.6 [Docker](https://github.com/JesseWo/NOTBOOK/blob/master/Linux/Docker.md)
-
-# 4. [梯子](https://github.com/JesseWo/NOTBOOK/blob/master/Linux/ladder.md)
+# 5. [梯子](https://github.com/JesseWo/NOTBOOK/blob/master/Linux/ladder.md)
 
