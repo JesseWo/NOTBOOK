@@ -37,7 +37,7 @@ https://koolproxy.io/docs/installation
 ### 4.3 smb
 - [OpenWrt搭建文件共享服务](https://www.jianshu.com/p/a122a036e8d9)
 
-### 4.4 owncloud
+### 4.4 nextcloud
 
 ## 5. 远程下载
 - aira2

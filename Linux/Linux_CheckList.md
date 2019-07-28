@@ -225,16 +225,39 @@ apt install build-essential libtool
 - 配置SSL证书
 
 ## 4.2 Mysql
+- [docs](https://dev.mysql.com/doc/refman/5.7/en/)
+- [docker hub](https://hub.docker.com/_/mysql)
 ```bash
 #安装server端
 apt install mysql-server
 #配置MySQL
 mysql_secure_installation
 #启动
-service mysql start
+systemctl start mysql.service
+#开机自启
+systemctl enable mysql.service
 #安装client端
 apt install mysql-client
 ```
+
+### 4.2.1 mycli
+> 命令行工具, 支持 SQL 语法提示
+- [官网](https://www.mycli.net/)
+- [github](https://github.com/dbcli/mycli)
+#### 安装
+If you already know how to install python packages, then you can install it via pip:
+You might need sudo on linux.
+  ```bash
+  pip install -U mycli
+  ```
+  or
+  ```bash
+  brew update && brew install mycli  # Only on macOS
+  ```
+  or
+  ```bash
+  sudo apt-get install mycli # Only on debian or ubuntu
+  ```
 
 ## 4.3 mangoDB
 - [官网](https://www.mongodb.com) 

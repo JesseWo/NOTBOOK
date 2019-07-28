@@ -117,10 +117,7 @@ exec $SHELL -l
 ## 5. [Manage Docker as a non-root user](https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user)
 > Docker 需要用户具有 sudo 权限，为了避免每次命令都输入sudo，可以把用户加入 Docker 用户组
 
-## 6. webUI
-  - [portainer](https://github.com/portainer/portainer)
-  
-## 7. Q&A
+## 6. Q&A
 解决不能 stop/kill containers 的问题: 
 > [Can not stop Docker Container: permission denied Error](https://forums.docker.com/t/can-not-stop-docker-container-permission-denied-error/41142/6)
 > 
@@ -148,9 +145,18 @@ sudo aa-status
 
 You should now be able to stop/kill containers.
 
+# images
+- [个人常用 docker image 集合](https://github.com/mritd/dockerfile)
+## 1. webUI
+  - [portainer](https://github.com/portainer/portainer)
+    > Making Docker management easy. 
+
 # Refs.
 - [Docker 官网](https://www.docker.com/)
 - [docker-hub](https://hub.docker.com/)
 - [Docker — 从入门到实践](https://docker_practice.gitee.io)
+  > docker 相关书籍, 建议通读;
 - [YAML](http://www.ruanyifeng.com/blog/2016/07/yaml.html)
-- 容器相关实现原理
+  > dockerfile 语法
+
+- [容器核心技术详解](https://blog.fliaping.com/container-core-technical-details/)

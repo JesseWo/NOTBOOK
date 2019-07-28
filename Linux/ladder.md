@@ -21,6 +21,9 @@
 - ss-tunnel
     >//todo
 
+- 透明代理
+
+
 * Optimize
 
   [Optimizing-Shadowsocks](https://github.com/shadowsocks/shadowsocks/wiki/Optimizing-Shadowsocks)
@@ -227,7 +230,7 @@ systemctl enable haproxy
             tar xzvf kcptun-darwin-amd64-20181114.tar.gz
             cd kcptun-darwin-amd64-20181114 
             ```
-            2. 准备配置文件 kcptun_client_config.json
+            1. 准备配置文件 kcptun_client_config.json
             ```json
             {
                 "localaddr": ":8989",
@@ -245,11 +248,11 @@ systemctl enable haproxy
                 "quiet": false
             }
             ```
-            3. 运行
+            1. 运行
             ```
             ./client_darwin_amd64 -c kcptun_client_config.json
             ```
-            4. 修改sslocal的配置
+            1. 修改sslocal的配置
 
             kcp运行成功后, 修改本地 `sslocal` 的配置文件, `server` 改成 `127.0.0.1`, `server_port` 同 kcptun_client_config 中的 `localaddr`. 最后重启 `sslocal`.
             ```json
@@ -265,7 +268,7 @@ systemctl enable haproxy
             }
             ```
             
-            5. 进阶使用
+            1. 进阶使用
 
             使用 `launchd` 配置开机自启
             (据说 `Linux` 中的 `Systemd` 就是抄袭的 `launchd`)<br>
