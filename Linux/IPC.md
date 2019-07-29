@@ -1,0 +1,26 @@
+> `IPC` (Inter-process communication) is a set of methods for the exchange of data among multiple threads in one or more processes. Processes may be running on one or more computers connected by a network
+
+也就是说，理论上所有跨线程的交互都可又称为IPC。它大致会分成两种，即 `LPC` 和 `RPC`.
+
+- `LPC` (The Local Procedure Call, often also referred to as  Lightweight Procedure Call or Local Inter-Process Communication) is an internal, undocumented inter-process communication facility provided by the Microsoft  Windows NT  kernel for lightweight  IPC between processes on the SAME computer.
+- `RPC` (remote procedure call) In computer science, is an inter-process communication that allows a computer program to cause a subroutine or procedure to execute in another address space (commonly on another computer on a shared network)
+
+对于Android系统来说，除了linux所提供的IPC机制外，它还有个binder机制（实际上用哪一种IPC并不是目的，关键是要看具体的应用环境）。对于binder机制，网上有铺天盖地的资料，这里我只想谈谈自己学习中的几点看法。
+学习binder最好的还是官网上的资料，http://developer.android.com/guide/index.html 
+
+binder提供了IPC的基础，它的base interface是Ibinder, 不过我们只会从binder继承。而对于AIDL，它更像一种工具，目的就是让binder的接口更亲切可人。也就是说，AIDL照其字面意思，AIDL (Android Interface Definition Language) is similar  to other IDLs you might haveworked with. It allows you to define the programming interface that both the client and service agree upon in order to communicate with each other usinginterprocess communication (IPC)。所以千万不要以为AIDL是另一种IPC，它只是让BINDER更好看的makeup。
+
+### JSON-RPC
+- [JSON-RPC 2.0 Specification](https://www.jsonrpc.org/specification)
+- [JSON-RPC 2.0 规范(中文版)](http://wiki.geekdream.com/Specification/json-rpc_2.0.html)
+
+### XML-RPC
+
+# gRPC
+> Google RPC
+- []()
+
+
+# bRPC
+> baidu-RPC
+- [github](https://github.com/apache/incubator-brpc)
