@@ -81,7 +81,7 @@ sudo locale-gen zh_CN.UTF-8
 ```
 
 # 2. 基础模块的安装
-## 2.1
+## 2.1 基础模块
 ```bash
 apt install -y curl wget vim git screen db-util openssl
 ```
@@ -147,19 +147,36 @@ zsh / [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
 - [SSMTP](https://wiki.archlinux.org/index.php/SSMTP)
 
+## 2.5. [梯子](https://github.com/JesseWo/NOTBOOK/blob/master/Linux/ladder.md)
 
-## 2.5 其他扩展工具
-### 2.5.1 [icdiff](https://github.com/jeffkaufman/icdiff)
+## 2.6 服务监控 webUI
+### 2.6.1 webmin
+- [Github](https://github.com/webmin/webmin)
+- [官网](http://webmin.com/index.html)
+- [wiki](https://doxfer.webmin.com/Webmin/Main_Page)
+- [docker](https://hub.docker.com/r/tragus/webmin)
+
+#### Installing on Debian
+```bash
+wget http://prdownloads.sourceforge.net/webadmin/webmin_1.920_all.deb
+dpkg --install webmin_1.920_all.deb
+# 其他依赖组件
+apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python
+```
+访问：https://nas-ip:10000
+
+## 2.7 其他扩展工具
+### 2.7.1 [icdiff](https://github.com/jeffkaufman/icdiff)
   > 扩展 `diff` 功能
   ```bash
   pip install git+https://github.com/jeffkaufman/icdiff.git
   ```
-### 2.5.2 [tldr](https://github.com/tldr-pages/tldr)
+### 2.7.2 [tldr](https://github.com/tldr-pages/tldr)
   >命令行doc查询工具, 比 `man` 更易用
   ```bash
   npm install -g tldr
   ```
-### 2.5.3  RSS 
+### 2.7.3  RSS 
 
   
 # 3. 开发环境搭建
@@ -286,5 +303,5 @@ service redis-server restart
 systemctl enable redis-server
 ```
 
-# 5. [梯子](https://github.com/JesseWo/NOTBOOK/blob/master/Linux/ladder.md)
+
 
