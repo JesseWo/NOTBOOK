@@ -147,7 +147,7 @@ zsh / [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
 - [SSMTP](https://wiki.archlinux.org/index.php/SSMTP)
 
-## 2.5. [梯子](https://github.com/JesseWo/NOTBOOK/blob/master/Linux/ladder.md)
+## 2.5. [梯子](https://github.com/JesseWo/NOTBOOK/blob/master/Linux/5-ladder.md)
 
 ## 2.6 服务监控 webUI
 ### 2.6.1 webmin
@@ -164,6 +164,9 @@ dpkg --install webmin_1.920_all.deb
 apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python
 ```
 访问：https://nas-ip:10000
+
+### 2.6.2 宝塔面板
+
 
 ## 2.7 其他扩展工具
 ### 2.7.1 [icdiff](https://github.com/jeffkaufman/icdiff)
@@ -302,6 +305,8 @@ service redis-server restart
 # 设置开机自启
 systemctl enable redis-server
 ```
+
+## 4.5 [分布式存储](https://github.com/JesseWo/NOTBOOK/blob/master/Linux/8-分布式存储.md)
 
 
 

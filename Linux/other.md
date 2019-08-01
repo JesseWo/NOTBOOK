@@ -16,3 +16,6 @@
 
 
 ## Termux
+
+
+[deepin](https://www.deepin.org/acknowledgments/deepin/)
