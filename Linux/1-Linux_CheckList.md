@@ -308,5 +308,5 @@ systemctl enable redis-server
 
 ## 4.5 [分布式存储](https://github.com/JesseWo/NOTBOOK/blob/master/Linux/8-分布式存储.md)
 
-
+[raspberrypi](https://www.jianshu.com/p/87f19de08877)
 

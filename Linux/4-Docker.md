@@ -91,27 +91,16 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-
 sudo chmod +x /usr/local/bin/docker-compose 
 # 查看 
 docker-compose --version
-
 ```
 
 ## 4. 命令行自动补全 [Command-line completion](https://docs.docker.com/compose/completion/)
-
-    对于zsh
-
-### 4.1 在用户home目录
+对于 `zsh`, 如果已经安装了 `OH-MY-ZSH`, 在 `~/.zshrc` 文件中添加 `plugin`
 ```bash
-mkdir -p ~/.zsh/completion 
-curl -L [https://raw.githubusercontent.com/docker/compose/1.21.2/contrib/completion/zsh/\_docker-compose](https://raw.githubusercontent.com/docker/compose/1.21.2/contrib/completion/zsh/_docker-compose) &gt; ~/.zsh/completion/\_docker-compose
-```
-
-### 4.2 然后在 `~/.zshrc` 中添加
-```
-fpath=\(~/.zsh/completion $fpath\) autoload -Uz compinit && compinit -i
-```
-
-### 4.3 最后重启shell
-```bash
-exec $SHELL -l
+plugins=(
+  ... 
+  docker 
+  docker-compose
+)
 ```
 
 ## 5. [Manage Docker as a non-root user](https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user)
@@ -147,9 +136,21 @@ You should now be able to stop/kill containers.
 
 # images
 - [个人常用 docker image 集合](https://github.com/mritd/dockerfile)
+## alpine
+> 基础镜像
+- [官网](https://alpinelinux.org)
+- [docker hub](https://hub.docker.com/_/alpine/)
 ## 1. webUI
   - [portainer](https://github.com/portainer/portainer)
     > Making Docker management easy. 
+
+## nginx
+- [docker hub](https://hub.docker.com/_/nginx)
+
+## jenkins
+- [docker hub](https://github.com/jenkinsci/docker/blob/master/README.md)
+
+## KodExplorer
 
 # Refs.
 - [Docker 官网](https://www.docker.com/)
