@@ -19,3 +19,5 @@
 
 
 [deepin](https://www.deepin.org/acknowledgments/deepin/)
+
+xdroid 或者 anbox，Android app 能不用虚拟机在linux下运行
