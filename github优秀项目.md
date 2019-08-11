@@ -1,4 +1,9 @@
 > 此文档主要收集github上的有趣项目
+
+- [HelloGitHub](https://github.com/521xueweihan/HelloGitHub)
+  > HelloGitHub 一个分享 GitHub 上有趣、入门级的开源项目。
+兴趣是最好的老师，这里能够帮你找到编程的兴趣！
+
 https://zhuanlan.zhihu.com/p/58449931
 # awesome 系列
 - [awesome](https://github.com/sindresorhus/awesome)
