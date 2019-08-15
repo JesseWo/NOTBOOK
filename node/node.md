@@ -4,15 +4,17 @@
 - [npm: package.json](https://docs.npmjs.com/files/package.json)
 - [npm scripts 使用指南](http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html)
 - [koa](https://koa.bootcss.com/)
+- [TypeScript体系调研报告](https://juejin.im/post/59c46bc86fb9a00a4636f939)
 
-## 内存缓存
-- [Redis](http://www.redis.net.cn/)
-- [node-Redis](https://www.npmjs.com/package/redis)
+## 脚手架
+- [eggjs](https://github.com/eggjs/egg)
+- [TypeScript-Node-Starter](https://github.com/microsoft/TypeScript-Node-Starter)
+- [node-typescript-boilerplate](https://github.com/jsynowiec/node-typescript-boilerplate)
 
-## 数据库
-- [MongoDB](https://docs.mongodb.com/guides/)
-- [MongoDB 中文](http://www.mongodb.org.cn/tutorial/)
-- [mongoose](http://mongoosejs.com/docs/index.html)
+
+## 命令行
+- [shelljs](https://github.com/shelljs/shelljs)
+- [commander.js](https://github.com/tj/commander.js)
 
 ## 用户系统设计
 ### 1. 登录验证码生成
