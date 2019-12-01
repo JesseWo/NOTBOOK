@@ -18,7 +18,34 @@
 # Android
 - [aosp-mirror](https://github.com/aosp-mirror)
 - [AndroidViewAnimations](https://github.com/daimajia/AndroidViewAnimations)
+## 图片选择器(本地图库)
 - [Album](https://github.com/yanzhenjie/Album)
+
+## 音频
+- [google/uamp](https://github.com/android/uamp)
+  > This sample shows how to implement an audio media app that works across multiple form factors and provide a consistent user experience on Android phones, tablets, Auto, Wear and Cast devices
+- [Timber](https://github.com/naman14/Timber)
+  > Material Design Music Player
+- [StylishMusicPlayer](https://github.com/ryanhoo/StylishMusicPlayer)
+  > A stylish music player for android device 16+
+- [andremion/Music-Player](https://github.com/andremion/Music-Player)
+- [MusicDNA](https://github.com/harjot-oberai/MusicDNA)
+- [JamsMusicPlayer](https://github.com/psaravan/JamsMusicPlayer)
+  > 5年前的项目,略老
+
+## 视频
+- [SmarterStreaming](https://github.com/daniulive/SmarterStreaming)
+    > 国内外为数不多致力于极致体验的超强全自研跨平台(windows/android/iOS)流媒体内核，通过模块化自由组合，支持实时RTMP推流、RTSP推流、RTMP播放器、RTSP播放器、录像、多路流媒体转发、音视频导播、动态视频合成、音频混音、直播互动、内置轻量级RTSP服务等，比快更快，业界真正靠谱的超低延迟直播SDK(1秒内，低延迟模式下200~400ms)。 https://www.daniulive.com
+- [Bilibili/ijkplayer](https://github.com/Bilibili/ijkplayer)
+- [google/ExoPlayer](https://github.com/google/ExoPlayer)
+- [JiaoZiVideoPlayer](https://github.com/lipangit/JiaoZiVideoPlayer)
+- [GSYVideoPlayer](https://github.com/CarGuo/GSYVideoPlayer)
+- [七牛PLDroidPlayer](https://github.com/pili-engineering/PLDroidPlayer)
+- [VideoPlayerManager](https://github.com/danylovolokh/VideoPlayerManager)
+- [PlayerBase](https://github.com/jiajunhui/PlayerBase)
+
+## 直播
+
 
 # 其他
 - [中国程序员容易发音错误的单词](https://github.com/shimohq/chinese-programmer-wrong-pronunciation)
