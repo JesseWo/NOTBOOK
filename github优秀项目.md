@@ -17,7 +17,8 @@
 
 # Android
 - [aosp-mirror](https://github.com/aosp-mirror)
-- []()
+- [AndroidViewAnimations](https://github.com/daimajia/AndroidViewAnimations)
+- [Album](https://github.com/yanzhenjie/Album)
 
 # 其他
 - [中国程序员容易发音错误的单词](https://github.com/shimohq/chinese-programmer-wrong-pronunciation)
