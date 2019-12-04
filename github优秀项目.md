@@ -18,6 +18,8 @@
 # Android
 - [aosp-mirror](https://github.com/aosp-mirror)
 - [AndroidViewAnimations](https://github.com/daimajia/AndroidViewAnimations)
+- [MagicIndicator](https://github.com/hackware1993/MagicIndicator)
+  > A powerful, customizable and extensible ViewPager indicator framework. As the best alternative of ViewPagerIndicator, TabLayout and PagerSlidingTabStrip —— 强大、可定制、易扩展的 ViewPager 指示器框架。是ViewPagerIndicator、TabLayout、PagerSlidingTabStrip的最佳替代品。支持角标，更支持在非ViewPager场景下使用（使用hide()、show()切换Fragment或使用setVisibility切换FrameLayout里的View等）
 ## 图片选择器(本地图库)
 - [Album](https://github.com/yanzhenjie/Album)
 
