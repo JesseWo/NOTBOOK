@@ -85,3 +85,6 @@ flutter create my_app
 cd my_app 
 flutter run
 ```
+
+### Refs.
+- [flutter macos install](https://docs.flutter.dev/get-started/install/macos)
