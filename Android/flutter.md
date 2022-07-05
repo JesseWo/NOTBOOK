@@ -88,3 +88,5 @@ flutter run
 
 ### Refs.
 - [flutter macos install](https://docs.flutter.dev/get-started/install/macos)
+- [Github: awesome-flutter](https://github.com/Solido/awesome-flutter)
+- [flutterawesome](https://flutterawesome.com/)
