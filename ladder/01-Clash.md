@@ -2,7 +2,7 @@
 > Update: 2023.11 删库
 
 - [Clash](https://github.com/Dreamacro/clash)
-- [Clash wiki](https://github.com/Dreamacro/clash/wiki)
+- [Clash wiki](https://clash.wiki/)
 - [Unofficial Clash Wiki.](https://lancellc.gitbook.io/clash)
 
 ## MacOS
