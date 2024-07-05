@@ -1,4 +1,5 @@
 # Clash
+> Update: 2023.11 删库
 
 - [Clash](https://github.com/Dreamacro/clash)
 - [Clash wiki](https://github.com/Dreamacro/clash/wiki)
@@ -9,6 +10,11 @@
 
 ## Windows
 - [clash for windows](https://github.com/Fndroid/clash_for_windows_pkg/releases)
+
+## ios/ipad os/tv os
+- shadowrocket
+
+[shadowrocket-rules](https://github.com/johnshall/Shadowrocket-ADBlock-Rules-Forever)
 
 ## Web (Dashboard)
 - [yacd](https://github.com/haishanh/yacd)

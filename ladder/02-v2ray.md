@@ -10,7 +10,7 @@
 
 - [官网](https://www.v2ray.com/)
 - [github](https://github.com/v2ray)
-- [新 V2Ray 白话文指南](https://guide.v2fly.org/#%E5%A3%B0%E6%98%8E)
+- [新 V2Ray 白话文指南](https://guide.v2fly.org/#%E5%A3%B0%E6%98%8E)- [v2ray-rules-dat](https://github.com/Loyalsoldier/v2ray-rules-dat/tree/master)
 
 ## 1. [安装](https://www.v2ray.com/chapter_00/install.html)
 > 官网教程已经相当详细, 此处不再赘述.
@@ -65,6 +65,4 @@ bash <(curl -L -s https://install.direct/go.sh)
 
 7. 配置v2ray客户端
    
-## 3.透明代理
-//todo
 

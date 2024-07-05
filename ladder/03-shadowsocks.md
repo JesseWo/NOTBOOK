@@ -24,8 +24,6 @@ shadowsocks 采用 `C/S` 架构, 以下列举了几种主要版本, 其中 `core
 - ss-tunnel
     >//todo
 
-- 透明代理
-
 
 * Optimize
 
