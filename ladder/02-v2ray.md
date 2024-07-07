@@ -65,4 +65,8 @@ bash <(curl -L -s https://install.direct/go.sh)
 
 7. 配置v2ray客户端
    
+## 使用 cloudflare worker 搭建
+[edgetunnel](https://github.com/zizifn/edgetunnel)
+[edgetunnel cm优化版](https://github.com/cmliu/edgetunnel/)
+[better-cloudflare-ip](https://github.com/badafans/better-cloudflare-ip/)
 
