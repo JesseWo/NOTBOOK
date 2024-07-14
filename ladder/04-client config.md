@@ -11,6 +11,8 @@
 >规则列表网址: https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 
 ## 2. Terminal 代理
+[盘点使 macOS 应用流量通过代理的多种方式
+](https://learnku.com/articles/43765)
 
 > sslocal 运行后, 终端并不会直接走 socks5 代理, 需要使用cli工具 [proxychains](https://github.com/rofl0r/proxychains-ng) 进行终端代理. (作用等同于chrome插件 SwitchyOmega)
 - 安装
