@@ -33,3 +33,18 @@ killall SystemUIServer
 ```
 
 ## 长截图(滚动截图)
+http://jietu.qq.com/
+
+## 菜单栏
+[stats](https://github.com/exelban/stats)
+> 用于在菜单栏展示CPU/GPU/Memo/Net等系统状态信息, istat menus 的开源替代产品, 个人认为要比 istat 好用;
+
+# 输入法
+个人认为输入法是数据泄露的重灾区, 搜x百x等输入法将你的个人输入数据上传到云端, 用于广告推荐, 甚至做更大的恶也不一定; 所以需要寻找开源方案:
+- 开源输入法 [Rime](https://rime.im/)
+- 配置文件 [rime-ice](https://github.com/iDvel/rime-ice)
+- 一键部署脚本 [rime-auto-deploy](https://github.com/Mark24Code/rime-auto-deploy)
+- Android端 [fcitx5-android](https://github.com/fcitx5-android/fcitx5-android)
+
+以上都可以给予同一份配置文件: [rime-ice]
+
