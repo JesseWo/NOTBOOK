@@ -1,7 +1,8 @@
 # shadowsocks
-- [官网](http://shadowsocks.org/en/index.html)
+- [官网](https://shadowsocks.org/)
 - [Github](https://github.com/shadowsocks)
 - [Feature Comparison across Different Versions](https://github.com/shadowsocks/shadowsocks/wiki/Feature-Comparison-across-Different-Versions)
+- [shadowsocksrr](https://github.com/shadowsocksrr/)
 
 shadowsocks 采用 `C/S` 架构, 以下列举了几种主要版本, 其中 `core` 主要包括 `sslocal` 和 `ssserver` 两个核心模块(shadowsocks-libev 还有其他模块), 顾名思义, sslocal 是 client 端, ssserver 是 server 端. 
 
