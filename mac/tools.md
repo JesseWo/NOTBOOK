@@ -44,7 +44,15 @@ http://jietu.qq.com/
 - 开源输入法 [Rime](https://rime.im/)
 - 配置文件 [rime-ice](https://github.com/iDvel/rime-ice)
 - 一键部署脚本 [rime-auto-deploy](https://github.com/Mark24Code/rime-auto-deploy)
+```bash
+# install or update
+cd rime-auto-deploy
+./installer.rb
+```
 - Android端 [fcitx5-android](https://github.com/fcitx5-android/fcitx5-android)
+可以通过 F-droid 下载, 一个是 fcitx5 输入法本体apk, 另一个是 rime plugin apk, 两个都需要安装;
+增加 rime-ice 配置, 
+设置Google drive 同步
 
 以上都可以给予同一份配置文件: [rime-ice]
 
