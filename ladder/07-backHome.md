@@ -12,7 +12,7 @@
 - 刷了 openwrt 的路由器，
 - 软路由(Arm 或 X86)
 - NAS
-- 其他有 >= 千兆网口的 Linux 设备，比如 OneCloud, RK3399 am40
+- 其他有 >= 千兆网口的 Linux 设备，比如 OneCloud, OCE-T RK3566, RK3399 am40
 
 ### 设备 A 
 - 部署在国内老家
@@ -32,7 +32,9 @@ B 作为网关转发海外家庭局域网的所有流量, 到 shellclash, clash 
 
 ## 3.自建服务器(cloudflare tunnel + v2ray)
 方案3跟2的区别就是内网穿透的方式, 这里使用的是 cloudflare tunnel (穿透方式类似Frp)
-优点: 出门在外也能访问, 也能给其他人用; 因为用的是 cloudflare 的全球CDN; 
+优点: 
+- 出门在外也能访问, 也能给其他人用; 因为用的是 cloudflare 的全球CDN; 
+- 实际用下来相对zerotier稳定些;
 缺点: 速度不太理想;
 
 > 准备2台Linux设备A和B; 

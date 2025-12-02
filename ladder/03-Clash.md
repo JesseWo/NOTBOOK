@@ -20,6 +20,6 @@
 - [yacd](https://github.com/haishanh/yacd)
 
 
-### OpenWrt
+### OpenWrt/Armbian 或其他嵌入式设备
 - [OpenClash](https://github.com/vernesong/OpenClash)
 - [ShellClash](https://github.com/juewuy/ShellClash/blob/master/README_CN.md)
